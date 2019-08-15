@@ -12,7 +12,7 @@
   },
   "author": "D.Toropin",
   "license": "MIT",
-  "homepage": "https://github.com/dtoropin/20190812-burgers#readme",
+  "homepage": "https://dtoropin.github.io/20190812-burgers/",
   "dependencies": {
 		"gulp-cli": "^2.2.0",
 		"jquery": "^3.4.1",

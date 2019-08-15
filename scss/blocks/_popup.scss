@@ -1,0 +1,44 @@
+.popup {
+  // display: flex;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(47, 50, 52, .92);
+  justify-content: center;
+  align-items: center;
+
+  &__block {
+    position: relative;
+    display: none;
+    max-width: 418px;
+    padding: 30px 20px;
+    border-radius: 5px;
+    background: #fff;
+  }
+
+  &__close {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/icons/close.png);
+
+    &:hover {
+      opacity: 0.7;
+      transition: .3s opacity ease;
+    }
+  }
+
+  &__title {
+    font-family: $font_title;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    line-height: 24px;
+  }
+}

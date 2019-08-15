@@ -1,0 +1,21 @@
+.button {
+  color: #fff;
+  background-color: #e45028;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 12px 18px;
+  transition: .3s background-color ease;
+
+  &:hover {
+    background-color: #c1401e;
+  }
+
+  &--grey {
+    background-color: #2f3234;
+
+    &:hover {
+      background-color: #1f2122;
+    }
+  }
+}
