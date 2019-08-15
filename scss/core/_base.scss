@@ -1,0 +1,12 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	overflow-y: scroll;
+	font-family: $font_base;
+	font-weight: 300;
+	font-size: $font_base_size;
+	color: $text_color;
+}
+	
