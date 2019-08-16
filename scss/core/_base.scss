@@ -4,12 +4,15 @@ body {
 	font-weight: 300;
 	font-size: $font_base_size;
 	color: $text_color;
+	cursor: default;
 }
 
 .wrapper {
-  & > section {
-  	height: 100vh;
-  }
+	min-width: 320px;
+	& > section,
+	& > .first {
+		min-height: 100vh;
+	}
 }
 	
 .container {
@@ -19,12 +22,13 @@ body {
 
 	&--flex {
 		display: flex;
-		justify-content: space-between;
+		// justify-content: space-between;
+		justify-content: center;
 		flex-wrap: wrap;
 	}
 
 	&--verticalflex {
-		min-height: 100%;
+		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -34,14 +38,9 @@ body {
 .header {
 	align-items: center;
 	
-  &__logo {
-    flex-grow: 1;
-  }
-}
-
-.logo {
-	display: block;
-	max-width: 92px;
+	&__logo {
+		flex-grow: 1;
+	}
 }
 
 .section {
