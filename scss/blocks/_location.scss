@@ -1,0 +1,30 @@
+.location {
+  font-style: normal;
+  color: #fff;
+}
+
+.location__addr {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.location__tel {
+  font-weight: 700;
+  color: $accent_color;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 11px;
+    margin-right: 8px;
+    background: url(../images/icons/phone.svg) no-repeat center;
+  }
+
+  &:hover {
+    opacity: 0.8;
+    transition: .3s opacity ease;
+  }
+}

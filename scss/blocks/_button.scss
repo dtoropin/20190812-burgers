@@ -1,24 +1,24 @@
 .button {
   color: #fff;
-  background-color: #e45028;
+  background-color: $accent_color;
   border-radius: 5px;
   text-transform: uppercase;
   font-weight: 500;
-  padding: 12px 18px;
+  padding: 12px 15px;
   outline: none;
   border: 0;
   cursor: pointer;
   transition: .3s background-color ease;
 
   &:hover {
-    background-color: #c1401e;
+    background-color: $accent_hover_color;
   }
 
   &--grey {
-    background-color: #2f3234;
+    background-color: $grey_color;
 
     &:hover {
-      background-color: #1f2122;
+      background-color: $grey_hover_color;
     }
   }
 
@@ -26,7 +26,7 @@
     background-color: transparent;
 
     &:hover {
-      background-color: rgba(0, 0, 0, .6);
+      background-color: rgba(#000, .6);
     }
   }
 }

@@ -5,10 +5,15 @@ $font_subtitle: 'Lifehack', serif;
 $font_base_size: 14px;
 
 // color
-$text_color: #2f3234;
+$grey_color: #2f3234;
+$grey_hover_color: #1f2122;
+$accent_color: #e45028;
+$accent_hover_color: #c1401e;
+$yellow_color: #f9b43b;
 
 // size
 $content_width: 960px;
 
 // z-index
 $z-navpage: 10;
+$z-popup: 20;

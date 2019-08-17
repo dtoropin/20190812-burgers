@@ -1,0 +1,29 @@
+.nav {
+  font-size: em(13px);
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 14px;
+  color: #fff;
+}
+
+.nav__item {
+  margin-left: 10px;
+
+  &::before {
+    content: '\25cf';
+    margin-right: 8px;
+  }
+
+  &:first-child {
+    margin-left: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.nav__link:hover {
+  color: rgba(#fff, 0.6);
+  transition: .3s color ease;
+}

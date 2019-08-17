@@ -4,26 +4,24 @@
   background-size: cover, cover;
   background-position: center;
   padding-top: 13px;
+}
 
-  &__content {
-    flex-grow: 1;
-    align-items: center;
-  }
+.first__content {
+  flex-grow: 1;
+  align-items: center;
+}
 
-  &__img,
-  &__text {
-    width: 50%;
-    padding: 10px;
-  }
+.first__img,
+.first__text {
+  width: 50%;
+  padding: 10px;
+}
 
-  &__img {
-    padding: 0 cp(40px);
-    background: url(../images/icons/drops.svg) no-repeat center 40px;
-    background-size: contain;
-  }
+.first__text {
+  padding-top: 70px;
+}
 
-  &__down {
-    margin: 38px auto;
-    width: 29px;
-  }
+.first__down {
+  margin: 38px auto;
+  width: 29px;
 }

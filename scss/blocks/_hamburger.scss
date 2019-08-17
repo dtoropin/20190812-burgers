@@ -3,33 +3,40 @@
   width: 24px;
   height: 24px;
   cursor: pointer;
-  &__elem {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 4px;
-    background: #fff;
-    border-radius: 3px;
-    margin-bottom: 5px;
-    transition: .3s background-color ease;
-    &:last-child {
-      margin-bottom: 0;
-    }
+}
+
+.hamburger__elem {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: #fff;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  transition: .3s background-color ease;
+
+  &:last-child {
+    margin-bottom: 0;
   }
-  &.active > .hamburger__elem {
-    opacity: 0.7;
-    &:nth-child(1) {
-      top: 9px;
-      transform: rotate(45deg);
-    }
-    &:nth-child(2) {
-      display: none;
-    }
-    &:nth-child(3) {
-      transform: rotate(-45deg);
-    }
+}
+
+.hamburger:hover > .hamburger__elem {
+  opacity: 0.8;
+}
+
+.hamburger.active > .hamburger__elem {
+  opacity: 0.7;
+
+  &:nth-child(1) {
+    top: 9px;
+    transform: rotate(45deg);
   }
-  &:hover > .hamburger__elem {
-    opacity: 0.8;
+
+  &:nth-child(2) {
+    display: none;
+  }
+  
+  &:nth-child(3) {
+    transform: rotate(-45deg);
   }
 }

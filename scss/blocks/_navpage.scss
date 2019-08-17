@@ -3,39 +3,39 @@
   top: 90px;
   right: 50px;
   z-index: $z-navpage;
+}
 
-  &__item {
-    margin-bottom: 10px;
+.navpage__item {
+  margin-bottom: 10px;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    &.active > .navpage__dotted {
-      pointer-events: none;
-    }
+  &:last-child {
+    margin-bottom: 0;
   }
 
-  &__dotted {
-    position: relative;
-    display: block;
-    padding: 8px;
-    border: 1px solid transparent;
-    border-radius: 50%;
-    transition: .3s all ease;
+  &.active > .navpage__dotted {
+    pointer-events: none;
+  }
+}
 
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background-color: #fff;
-    }
+.navpage__dotted {
+  position: relative;
+  display: block;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  transition: .3s all ease;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #fff;
   }
 }
 
