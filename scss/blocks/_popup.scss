@@ -59,4 +59,16 @@
   &__text {
     line-height: 24px;
   }
+
+  &__mes {
+    display: none;
+    padding: 20px;
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+
+    &-text {
+      margin-bottom: 18px;
+    }
+  }
 }

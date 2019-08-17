@@ -49,7 +49,7 @@ function html() {
 function style() {
   return gulp.src(path.style.src)
 		.pipe(sourcemaps.init())
-		.pipe(sass({ outputStyle: 'compact' }).on('error', notify.onError()))
+		.pipe(sass({ outputStyle: 'compressed' }).on('error', notify.onError()))
 		.pipe(prefixer())
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(path.style.dest))

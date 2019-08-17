@@ -7,12 +7,9 @@ body {
 	cursor: default;
 }
 
-.wrapper {
+.section {
+	min-height: 100vh;
 	min-width: 320px;
-	& > section,
-	& > .first {
-		min-height: 100vh;
-	}
 }
 	
 .container {
@@ -22,7 +19,6 @@ body {
 
 	&--flex {
 		display: flex;
-		// justify-content: space-between;
 		justify-content: center;
 		flex-wrap: wrap;
 	}
@@ -48,11 +44,14 @@ body {
 		font-family: $font_title;
 		font-size: em(72px);
 		margin-bottom: cp(52px);
-
+		&--center {
+			text-align: center;
+		}
 		&--yellow {
 			color: #f9b43b;
 		}
 	}
+
 	&-subtitle {
 		font-family: $font_subtitle;
 		font-size: em(65px);

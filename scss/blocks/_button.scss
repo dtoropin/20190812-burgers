@@ -5,6 +5,9 @@
   text-transform: uppercase;
   font-weight: 500;
   padding: 12px 18px;
+  outline: none;
+  border: 0;
+  cursor: pointer;
   transition: .3s background-color ease;
 
   &:hover {
@@ -16,6 +19,14 @@
 
     &:hover {
       background-color: #1f2122;
+    }
+  }
+
+  &--empty {
+    background-color: transparent;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .6);
     }
   }
 }
