@@ -15,6 +15,28 @@ body {
 .section {
 	min-height: 100vh;
 }
+
+.section-title {
+	font-family: $font_title;
+	font-size: em(72px);
+	margin-bottom: cp(52px);
+
+	&--center {
+		text-align: center;
+	}
+	&--yellow {
+		color: $yellow_color;
+	}
+	&--white {
+		color: #fff;
+	}
+}
+
+.section-subtitle {
+	font-family: $font_subtitle;
+	font-size: em(65px);
+	color: #fff;
+}
 	
 .container {
 	max-width: $content_width;
@@ -43,31 +65,7 @@ body {
 	}
 }
 
-.section {
-	&-title {
-		font-family: $font_title;
-		font-size: em(72px);
-		margin-bottom: cp(52px);
-
-		&--center {
-			text-align: center;
-		}
-		&--yellow {
-			color: $yellow_color;
-		}
-		&--white {
-			color: #fff;
-		}
-	}
-}
-
-.section-subtitle {
-	font-family: $font_subtitle;
-	font-size: em(65px);
-	color: #fff;
-}
-
 .footer {
 	padding: 10px 12px;
-	background: url(../images/delivery-bg.jpg) no-repeat center;
+	background: url(../images/delivery-bg.jpg) no-repeat center / cover;
 }

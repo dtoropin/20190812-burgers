@@ -1,0 +1,67 @@
+.accordion {
+  color: #fff;
+}
+
+.accordion__item {
+  margin-bottom: 35px;
+  transition: .3s all ease;
+
+  &.active {
+    & > .accordion__head::before {
+      transform: rotate(180deg);
+    }
+
+    & > .accordion__card {
+      height: 100%;
+      padding: 18px;
+    }
+  }
+}
+
+.accordion__head {
+  font-family: $font_title;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 4.5px 0 4.5px;
+    border-color: #f9b43b transparent transparent transparent;
+    margin-right: 10px;
+  }
+}
+
+.accordion__card {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+
+.accordion__img {
+  min-width: 100px;
+  min-height: 100px;
+  margin-right: 21px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: no-repeat center / cover;
+}
+
+.accordion__subs {
+  max-width: 208px;
+}
+
+.accordion__title {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.accordion__text {
+  line-height: em(21px);
+}
