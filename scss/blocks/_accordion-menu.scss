@@ -1,0 +1,52 @@
+.accordion-menu {
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.accordion-menu__item {
+  display: flex;
+  transition: .3s all ease;
+
+  &.active {
+    & > .accordion-menu__head {
+      color: $yellow_color;
+      cursor: default;
+    }
+
+    & > .accordion-menu__text {
+      width: 100%;
+      padding: 60px 35px;
+    }
+  }
+}
+
+.accordion-menu__head {
+  font-family: $font_title;
+  font-size: em(40px);
+  writing-mode: vertical-lr;
+  padding: 40px 18px;
+  transform: rotate(180deg);
+  cursor: pointer;
+  transition: .3s color ease;
+
+  &:hover {
+    color: rgba(#fff, .8);
+  }
+}
+
+@each $bg in (meat, vegan, diet) {
+  .accordion-menu__head--#{$bg} {
+    background: url(../images/accordion-bg-#{$bg}.jpg) no-repeat center / cover;
+  }
+}
+
+.accordion-menu__text {
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+  background: rgba(#363534, .92);
+  line-height: em(28px);
+  transition: .3s all ease;
+}

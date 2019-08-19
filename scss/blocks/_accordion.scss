@@ -7,8 +7,12 @@
   transition: .3s all ease;
 
   &.active {
-    & > .accordion__head::before {
-      transform: rotate(180deg);
+    & > .accordion__head {
+      color: $yellow_color;
+
+      &::before {
+        transform: rotate(180deg);
+      }
     }
 
     & > .accordion__card {
@@ -23,6 +27,7 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  transition: .3s color ease;
 
   &::before {
     content: '';
@@ -34,6 +39,10 @@
     border-color: #f9b43b transparent transparent transparent;
     margin-right: 10px;
   }
+
+  &:hover {
+    color: rgba(#fff, .8);
+  }
 }
 
 .accordion__card {
@@ -42,6 +51,7 @@
   overflow: hidden;
   display: flex;
   align-items: flex-start;
+  transition: .3s all ease;
 }
 
 .accordion__img {

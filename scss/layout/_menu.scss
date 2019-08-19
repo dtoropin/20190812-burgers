@@ -2,3 +2,12 @@
   position: relative;
   background: url(../images/menu-bg.jpg) no-repeat center / cover;
 }
+
+.menu__content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 65%;
+  min-height: 350px;
+}
