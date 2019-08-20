@@ -8,11 +8,11 @@ var gulp = require('gulp'),
   sourcemaps = require('gulp-sourcemaps'),
   notify = require('gulp-notify'),
   del = require('del'),
-	browserSync = require('browser-sync'),
+  browserSync = require('browser-sync'),
   reload = browserSync.reload;
 
 sass.compiler = require('node-sass');
-  
+
 var path = {
   html: {
     src: '*.html',
@@ -26,12 +26,12 @@ var path = {
 };
 
 var config = {
-	server: {
-		baseDir: './'
-	},
-	host: 'localhost',
-	port: 9000,
-	browser: ['chrome']
+  server: {
+    baseDir: './'
+  },
+  host: 'localhost',
+  port: 9000,
+  browser: ['chrome']
 };
 
 // server
@@ -42,18 +42,18 @@ function webserver() {
 // html
 function html() {
   return gulp.src(path.html.src)
-    .pipe(reload({stream: true}));
+    .pipe(reload({ stream: true }));
 }
 
 // style
 function style() {
   return gulp.src(path.style.src)
-		.pipe(sourcemaps.init())
-		.pipe(sass({ outputStyle: 'compressed' }).on('error', notify.onError()))
-		.pipe(prefixer())
-		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest(path.style.dest))
-		.pipe(reload({stream: true}));
+    .pipe(sourcemaps.init())
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', notify.onError()))
+    .pipe(prefixer())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(path.style.dest))
+    .pipe(reload({ stream: true }));
 }
 
 // watch
@@ -64,7 +64,7 @@ function devwatch() {
 
 // clean
 function clean() {
-  return del([ 'css' ]);
+  return del(['css']);
 }
 
 // build
@@ -72,3 +72,18 @@ var build = gulp.series(clean, gulp.parallel(style));
 
 // default
 gulp.task('default', gulp.series(build, gulp.parallel(webserver, devwatch)));
+
+//svg sprite
+var svgSprite = require('gulp-svg-sprite');
+gulp.task('svgSprite', function () {
+  return gulp.src('images/icons/*.svg') // svg files for sprite
+    .pipe(svgSprite({
+      mode: {
+        stack: {
+          sprite: "../sprite.svg"  //sprite file name
+        }
+      },
+    }
+    ))
+    .pipe(gulp.dest('images/'));
+});

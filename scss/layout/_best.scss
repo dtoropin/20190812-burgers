@@ -17,7 +17,7 @@
 
 @each $icon in (meat, hand, natural) {
   .best__img--#{$icon} {
-    background: url(../images/icons/#{$icon}.svg) no-repeat center bottom / contain;
+    background: url(../images/sprite.svg##{$icon}) no-repeat center bottom / contain;
   }
 }
 

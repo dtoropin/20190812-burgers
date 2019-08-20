@@ -24,12 +24,12 @@
   height: 20px;
 
   &--vk {
-    width: 27px;
+    width: 25px;
   }
 }
 
 @each $icon in (vk, fb, inst, twitter) {
   .social__link--#{$icon} {
-    background: url(../images/icons/#{$icon}.svg) no-repeat center / contain;
+    background: url(../images/sprite.svg##{$icon}) no-repeat center / cover;
   }
 }

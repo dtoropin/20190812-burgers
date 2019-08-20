@@ -17,7 +17,7 @@
 
     & > .accordion-menu__text {
       width: 100%;
-      padding: 60px 35px;
+      padding: cp(60px, 760px) cp(35px, 760px);
     }
   }
 }
@@ -36,18 +36,18 @@
   }
 }
 
+@each $bg in (meat, vegan, diet) {
+  .accordion-menu__title--#{$bg} {
+    background: url(../images/accordion-bg-#{$bg}.jpg) no-repeat center / cover;
+  }
+}
+
 .accordion-menu__head {
   font-family: $font_title;
   font-size: em(40px);
   writing-mode: vertical-lr;
   padding-top: 40px;
   transform: rotate(180deg);
-}
-
-@each $bg in (meat, vegan, diet) {
-  .accordion-menu__title--#{$bg} {
-    background: url(../images/accordion-bg-#{$bg}.jpg) no-repeat center / cover;
-  }
 }
 
 .accordion-menu__text {
