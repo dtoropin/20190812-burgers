@@ -8,6 +8,7 @@
   align-items: center;
   margin-left: 20px;
   opacity: 0.3;
+  transition: .3s opacity ease;
 
   &:first-child {
     margin-left: 0;
@@ -15,7 +16,6 @@
 
   &:hover {
     opacity: 1;
-    transition: .3s opacity ease;
   }
 }
 

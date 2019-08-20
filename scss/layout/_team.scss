@@ -10,5 +10,9 @@
   right: 0;
   left: 50%;
   background: rgba(#2f3234, .92);
-  padding: 113px 97px 50px;
+  padding-left: cp(97px, 1440px);
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

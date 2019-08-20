@@ -1,6 +1,3 @@
 .delivery {
-  background-image: url(../images/delivery-bg-texture.png), url(../images/delivery-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover, cover;
-  background-position: center;
+  background: url(../images/delivery-bg.jpg) no-repeat center / cover;
 }

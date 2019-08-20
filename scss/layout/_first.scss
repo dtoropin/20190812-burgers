@@ -1,8 +1,5 @@
 .first {
-  background-image: url(../images/first-bg-texture.png), url(../images/first-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover, cover;
-  background-position: center;
+  background: url(../images/first-bg.jpg) no-repeat center / cover;
   padding-top: 13px;
 }
 

@@ -24,10 +24,10 @@
 
 .accordion__head {
   font-family: $font_title;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   cursor: pointer;
-  transition: .3s color ease;
+  transition: .3s all ease;
 
   &::before {
     content: '';
@@ -41,7 +41,7 @@
   }
 
   &:hover {
-    color: rgba(#fff, .8);
+    color: rgba(#fff, .6);
   }
 }
 

@@ -23,7 +23,10 @@
   }
 }
 
-.nav__link:hover {
-  color: rgba(#fff, 0.6);
+.nav__link {
   transition: .3s color ease;
+
+  &:hover {
+    color: rgba(#fff, 0.6);
+  }
 }

@@ -11,7 +11,7 @@
 .location__tel {
   font-weight: 700;
   color: $accent_color;
-  display: flex;
+  display: inline-flex;
   align-items: center;
 
   &::before {
