@@ -4,6 +4,18 @@
   text-transform: uppercase;
   margin-right: 14px;
   color: #fff;
+
+  @include for-notebook {
+    order: 1;
+    margin-left: 14px;
+    margin-right: 0;
+  }
+}
+
+.nav__list {
+  @include for-notebook {
+    display: none;
+  }
 }
 
 .nav__item {

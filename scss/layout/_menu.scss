@@ -1,25 +1,28 @@
 .menu {
   position: relative;
+  display: flex;
   background: url(../images/menu-bg.jpg) no-repeat center / cover;
-  height: 100%;
 }
 
 .menu__title {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 35%;
+  width: 35vw;
   padding-top: 100px;
   padding-right: 50px;
   text-align: right;
+
+  @include for-tablet {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 35%;
+  }
 }
 
 .menu__content {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 65%;
-  min-height: 350px;
+  width: 65vw;
+
+  @include for-tablet {
+    width: 100%;
+  }
 }

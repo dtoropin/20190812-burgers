@@ -3,9 +3,21 @@
   background: url(../images/best-bg.jpg) no-repeat center / cover;
 }
 
+.best__content {
+  @include for-phone {
+    flex-direction: column;
+  }
+}
+
 .best__item {
   width: 33%;
   padding: 0 cp(15px);
+
+  @include for-phone {
+    display: flex;
+    width: 100%;
+    margin-bottom: 50px;
+  }
 }
 
 .best__img {
@@ -13,6 +25,10 @@
   height: 89px;
   margin: 0 auto;
   margin-bottom: 33px;
+
+  @include for-phone {
+    width: 30%;
+  }
 }
 
 @each $icon in (meat, hand, natural) {
@@ -21,10 +37,25 @@
   }
 }
 
+.best__subscribe {
+  @include for-phone {
+    width: 70%;
+    text-align: left;
+  }
+}
+
 .best__head {
   font-family: $font_subtitle;
   font-size: em(24px);
   margin-bottom: cp(25px, 310px);
+
+  @include for-tablet {
+    font-size: em(21px);
+  }
+
+  @include for-phone {
+    font-size: em(24px);
+  }
 }
 
 .best__text {

@@ -1,18 +1,27 @@
 .team {
-  position: relative;
+  display: flex;
+  justify-content: flex-end;
   background: url(../images/team-bg.jpg) no-repeat center top / cover;
 }
 
 .team__content {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 50%;
+  width: 50%;
+  flex-shrink: 0;
   background: rgba(#2f3234, .92);
   padding-left: cp(97px, 1440px);
   padding-right: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include for-tablet {
+    width: 70%;
+    left: 0;
+    padding-left: 10px;
+    text-align: center;
+  }
+
+  @include for-phone {
+    width: 100%;
+  }
 }

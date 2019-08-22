@@ -233,9 +233,9 @@
       <div class="menu__content">
         <ul class="accordion-menu">
           <li class="accordion-menu__item active">
-            <div class="accordion-menu__title accordion-menu__title--meat">
-              <h3 class="accordion-menu__head">Для мясоедов</h3>
-            </div>
+            <h3 class="accordion-menu__title accordion-menu__title--meat">
+              <span class="accordion-menu__head">Для мясоедов</span>
+            </h3>
 
             <div class="accordion-menu__text">
               <p>
@@ -248,12 +248,15 @@
                 современник стал особенно чутко относиться к слову.
               </p>
             </div><!-- .accordion-menu__text -->
+            <div class="accordion-menu__link accordion-menu__link--meat">
+              <span class="accordion-menu__head">Для мясоедов</span>
+            </div>
           </li>
 
           <li class="accordion-menu__item">
-            <div class="accordion-menu__title accordion-menu__title--vegan">
-              <h3 class="accordion-menu__head">Вегетарианское</h3>
-            </div>
+            <h3 class="accordion-menu__title accordion-menu__title--vegan">
+              <span class="accordion-menu__head">Вегетарианское</span>
+            </h3>
 
             <div class="accordion-menu__text">
               <p>
@@ -266,12 +269,15 @@
                 современник стал особенно чутко относиться к слову.
               </p>
             </div><!-- .accordion-menu__text -->
+            <div class="accordion-menu__link accordion-menu__link--vegan">
+              <span class="accordion-menu__head">Вегетарианское</span>
+            </div>
           </li>
 
           <li class="accordion-menu__item">
-            <div class="accordion-menu__title accordion-menu__title--diet">
-              <h3 class="accordion-menu__head">Диетическое</h3>
-            </div>
+            <h3 class="accordion-menu__title accordion-menu__title--diet">
+              <span class="accordion-menu__head">Диетическое</span>
+            </h3>
 
             <div class="accordion-menu__text">
               <p>
@@ -284,6 +290,9 @@
                 современник стал особенно чутко относиться к слову.
               </p>
             </div><!-- .accordion-menu__text -->
+            <div class="accordion-menu__link accordion-menu__link--diet">
+              <span class="accordion-menu__head">Диетическое</span>
+            </div>
           </li>
         </ul><!-- .accordion-menu -->
       </div><!-- .menu__content -->
@@ -301,6 +310,7 @@
               </p>
             </div>
             <a href="#" class="button button--grey">Подробнее</a>
+            <a href="#" class="button button--mobile button--grey">Читать отзыв</a>
           </div><!-- .reviews__hover -->
         </li>
 
@@ -314,6 +324,7 @@
               </p>
             </div>
             <a href="#" class="button button--grey">Подробнее</a>
+            <a href="#" class="button button--mobile button--grey">Читать отзыв</a>
           </div><!-- .reviews__hover -->
         </li>
 
@@ -327,6 +338,7 @@
               </p>
             </div>
             <a href="#" class="button button--grey">Подробнее</a>
+            <a href="#" class="button button--mobile button--grey">Читать отзыв</a>
           </div><!-- .reviews__hover -->
         </li>
 
@@ -340,6 +352,7 @@
               </p>
             </div>
             <a href="#" class="button button--grey">Подробнее</a>
+            <a href="#" class="button button--mobile button--grey">Читать отзыв</a>
           </div><!-- .reviews__hover -->
         </li>
 
@@ -353,6 +366,7 @@
               </p>
             </div>
             <a href="#" class="button button--grey">Подробнее</a>
+            <a href="#" class="button button--mobile button--grey">Читать отзыв</a>
           </div><!-- .reviews__hover -->
         </li>
 
@@ -366,6 +380,7 @@
               </p>
             </div>
             <a href="#" class="button button--grey">Подробнее</a>
+            <a href="#" class="button button--mobile button--grey">Читать отзыв</a>
           </div><!-- .reviews__hover -->
         </li>
 
@@ -379,6 +394,7 @@
               </p>
             </div>
             <a href="#" class="button button--grey">Подробнее</a>
+            <a href="#" class="button button--mobile button--grey">Читать отзыв</a>
           </div><!-- .reviews__hover -->
         </li>
 
@@ -392,6 +408,7 @@
               </p>
             </div>
             <a href="#" class="button button--grey">Подробнее</a>
+            <a href="#" class="button button--mobile button--grey">Читать отзыв</a>
           </div><!-- .reviews__hover -->
         </li>
       </ul>
@@ -439,7 +456,7 @@
                 <input type="text" name="apartment" class="delivery-form__input" required>
               </label>
 
-              <label class="delivery-form__item">
+              <label class="delivery-form__item delivery-form__item--mobile">
                 <span class="delivery-form__title">Этаж</span>
                 <input type="text" name="floor" class="delivery-form__input">
               </label>
@@ -454,7 +471,7 @@
               </label>
             </div><!-- .delivery-form__row -->
 
-            <div class="delivery-form__row delivery-form__row--radio">
+            <div class="delivery-form__row delivery-form__row--radio delivery-form__row--mobile">
               <label class="delivery-form__item delivery-form__item--flex">
                 <input type="radio" name="pay" value="cash" class="delivery-form__input-hidden">
                 <span class="delivery-form__radio"></span>
@@ -468,7 +485,7 @@
               </label>
             </div><!-- .delivery-form__row -->
 
-            <div class="delivery-form__row">
+            <div class="delivery-form__row delivery-form__row--mobile">
               <label class="delivery-form__item delivery-form__item--flex">
                 <input type="checkbox" name="nocallback" class="delivery-form__input-hidden" checked>
                 <span class="delivery-form__check"></span>
@@ -476,7 +493,7 @@
               </label>
             </div><!-- .delivery-form__row -->
 
-            <div class="delivery-form__row">
+            <div class="delivery-form__row delivery-form__row--mobile">
               <button type="submit" class="button">Заказать</button>
               <button type="reset" class="button button--empty">Очистить</button>
             </div><!-- .delivery-form__row -->

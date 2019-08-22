@@ -5,6 +5,7 @@ var gulp = require('gulp'),
   watch = require('gulp-watch'),
   prefixer = require('gulp-autoprefixer'),
   sass = require('gulp-sass'),
+  gcmq = require('gulp-group-css-media-queries'),
   sourcemaps = require('gulp-sourcemaps'),
   notify = require('gulp-notify'),
   del = require('del'),
@@ -49,8 +50,9 @@ function html() {
 function style() {
   return gulp.src(path.style.src)
     .pipe(sourcemaps.init())
-    .pipe(sass({ outputStyle: 'compressed' }).on('error', notify.onError()))
+    .pipe(sass({ outputStyle: 'compact' }).on('error', notify.onError()))
     .pipe(prefixer())
+    .pipe(gcmq())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(path.style.dest))
     .pipe(reload({ stream: true }));
@@ -76,7 +78,7 @@ gulp.task('default', gulp.series(build, gulp.parallel(webserver, devwatch)));
 //svg sprite
 var svgSprite = require('gulp-svg-sprite');
 gulp.task('svgSprite', function () {
-  return gulp.src('images/icons/*.svg') // svg files for sprite
+  return gulp.src('images/icons/*.svg') //svg files for sprite
     .pipe(svgSprite({
       mode: {
         stack: {

@@ -1,6 +1,11 @@
 .location {
   font-style: normal;
   color: #fff;
+
+  @include for-phone {
+    text-align: center;
+    margin-bottom: 18px;
+  }
 }
 
 .location__addr {

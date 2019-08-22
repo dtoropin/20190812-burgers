@@ -6,16 +6,37 @@
 .first__content {
   flex-grow: 1;
   align-items: center;
+
+  @include for-tablet {
+    flex-direction: column;
+  }
 }
 
 .first__img,
 .first__text {
-  width: 50%;
   padding: 10px;
 }
 
+.first__img {
+  width: 45%;
+
+  @include for-tablet {
+    width: 60%;
+  }
+
+  @include for-phone {
+    width: 80%;
+  }
+}
+
 .first__text {
-  padding-top: 70px;
+  width: 55%;
+  padding-top: 50px;
+
+  @include for-tablet {
+    text-align: center;
+    width: 90%;
+  }
 }
 
 .first__down {

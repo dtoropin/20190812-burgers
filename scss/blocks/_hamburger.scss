@@ -3,6 +3,10 @@
   width: 24px;
   height: 24px;
   cursor: pointer;
+
+  @include for-notebook {
+    display: block;
+  }
 }
 
 .hamburger__elem {

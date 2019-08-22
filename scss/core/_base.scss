@@ -4,6 +4,14 @@ body {
 	font-weight: 300;
 	font-size: $font_base_size;
 	color: $grey_color;
+
+	@include for-notebook {
+		font-size: ($font_base_size - 1px);
+	}
+
+	@include for-tablet {
+		font-size: $font_base_size;
+	}
 }
 
 .wrapper {
@@ -36,6 +44,10 @@ body {
 	font-family: $font_subtitle;
 	font-size: em(65px);
 	color: #fff;
+
+	@include for-phone {
+		font-size: em(48px);
+	}
 }
 	
 .container {
@@ -68,4 +80,17 @@ body {
 .footer {
 	padding: 10px 12px;
 	background: url(../images/delivery-bg.jpg) no-repeat center / cover;
+
+	@include for-phone {
+		padding-bottom: 20px;
+		padding-top: 18px;
+	}
+
+	& > .container {
+		@include for-phone {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+	}
 }

@@ -29,4 +29,12 @@
       background-color: rgba(#000, .6);
     }
   }
+
+  &--mobile {
+    display: none;
+    
+    @include for-phone {
+      display: block;
+    }
+  }
 }

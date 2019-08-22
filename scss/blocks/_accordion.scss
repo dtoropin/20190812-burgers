@@ -29,6 +29,10 @@
   cursor: pointer;
   transition: .3s all ease;
 
+  @include for-tablet {
+    font-size: em(24px);
+  }
+
   &::before {
     content: '';
     display: inline-block;
@@ -52,6 +56,12 @@
   display: flex;
   align-items: flex-start;
   transition: .3s all ease;
+
+  @include for-tablet {
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 .accordion__img {
@@ -61,6 +71,11 @@
   border-radius: 50%;
   overflow: hidden;
   background: no-repeat center / cover;
+
+  @include for-tablet {
+    margin-right: 0;
+    margin-bottom: 22px;
+  }
 }
 
 .accordion__subs {

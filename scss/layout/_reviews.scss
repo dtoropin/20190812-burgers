@@ -1,5 +1,11 @@
 .reviews {
   position: relative;
+
+  & .button:not(.button--mobile) {
+    @include for-phone {
+      display: none;
+    }
+  }
 }
 
 .reviews__list {
@@ -15,6 +21,10 @@
   filter: grayscale(1);
   background: no-repeat center;
   background-size: cover;
+
+  @include for-tablet {
+    width: 50%;
+  }
 
   &:hover > .reviews__hover {
     opacity: 1;
@@ -36,14 +46,27 @@
   background: rgba(#000, .5);
   color: #fff;
   transition: opacity .3s ease;
+
+  @include for-tablet {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .reviews__title {
   font-family: $font_title;
   margin-bottom: cp(25px, 275px);
+
+  @include for-phone {
+    font-size: em(24px);
+  }
 }
 
 .reviews__text {
   line-height: em(24px);
   margin-bottom: cp(15px, 275px);
+
+  @include for-phone {
+    display: none;
+  }
 }
