@@ -16,12 +16,12 @@
     margin-bottom: 0;
   }
 
-  &.active > .navpage__dotted {
+  &.active > .navpage__dot {
     pointer-events: none;
   }
 }
 
-.navpage__dotted {
+.navpage__dot {
   position: relative;
   display: block;
   padding: 8px;
@@ -43,7 +43,7 @@
   }
 }
 
-.navpage__dotted:hover,
-.navpage__item.active > .navpage__dotted {
+.navpage__dot:hover,
+.navpage__item.active > .navpage__dot {
   border: 1px solid #fff;
 }

@@ -15,6 +15,17 @@
 .nav__list {
   @include for-notebook {
     display: none;
+    position: absolute;
+    top: 0;
+    min-height: 100vh;
+    right: 0;
+    left: 0;
+    background: rgba($grey_color, .92);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    // для .header__button z-index: -2;
   }
 }
 
@@ -24,6 +35,10 @@
   &::before {
     content: '\25cf';
     margin-right: 8px;
+
+    @include for-notebook {
+      margin-bottom: 20px;
+    }
   }
 
   &:first-child {
@@ -32,6 +47,14 @@
     &::before {
       display: none;
     }
+  }
+
+  @include for-notebook {
+    font-size: em(21px);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
   }
 }
 

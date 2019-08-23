@@ -1,4 +1,5 @@
 .first {
+  min-height: 100vh;
   background: url(../images/first-bg.jpg) no-repeat center / cover;
   padding-top: 13px;
 }
@@ -42,4 +43,9 @@
 .first__down {
   margin: 38px auto;
   width: 29px;
+  transition: .3s all ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }

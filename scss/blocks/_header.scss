@@ -1,0 +1,12 @@
+.header {
+	align-items: center;
+	z-index: $z-header;
+	
+	&__logo {
+		flex-grow: 1;
+	}
+}
+
+.header__button {
+	z-index: -2;
+}
