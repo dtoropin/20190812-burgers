@@ -1,14 +1,18 @@
 .footer {
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: 0;
 	padding: 10px 12px;
 	background: url(../images/delivery-bg.jpg) no-repeat center / cover;
 
-	@include for-phone {
+	@include phone {
 		padding-bottom: 20px;
 		padding-top: 18px;
 	}
 
 	& > .container {
-		@include for-phone {
+		@include phone {
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;

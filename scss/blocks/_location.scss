@@ -2,7 +2,7 @@
   font-style: normal;
   color: #fff;
 
-  @include for-phone {
+  @include phone {
     text-align: center;
     margin-bottom: 18px;
   }

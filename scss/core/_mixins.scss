@@ -8,32 +8,20 @@
 }
 
 @function em($target, $context: $font_base_size) {
-	@if $target == 0 {
-		@return 0;
-	}
 	@return $target / $context + 0em;
 }
 	
 @function cp($target, $context: $content_width) {
-	@if $target == 0 {
-		@return 0;
-	}
 	@return $target / $context * 100%;
 }
 
 // media
-@mixin for-phone {
+@mixin phone {
   @media (max-width: 480px) { @content; }
 }
-@mixin for-tablet {
+@mixin tablet {
   @media (max-width: 768px) { @content; }
 }
-@mixin for-notebook {
+@mixin notebook {
   @media (max-width: 992px) { @content; }
-}
-@mixin for-desktop {
-  @media (max-width: 1200px) { @content; }
-}
-@mixin for-big-desktop {
-  @media (max-width: 1800px) { @content; }
 }

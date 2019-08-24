@@ -6,7 +6,7 @@ var gulp = require('gulp'),
   prefixer = require('gulp-autoprefixer'),
   sass = require('gulp-sass'),
   gcmq = require('gulp-group-css-media-queries'),
-  sourcemaps = require('gulp-sourcemaps'),
+  // sourcemaps = require('gulp-sourcemaps'),
   notify = require('gulp-notify'),
   del = require('del'),
   browserSync = require('browser-sync'),
@@ -49,11 +49,9 @@ function html() {
 // style
 function style() {
   return gulp.src(path.style.src)
-    .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'compact' }).on('error', notify.onError()))
     .pipe(prefixer())
     .pipe(gcmq())
-    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(path.style.dest))
     .pipe(reload({ stream: true }));
 }

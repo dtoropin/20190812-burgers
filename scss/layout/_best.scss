@@ -5,7 +5,7 @@
 }
 
 .best__content {
-  @include for-phone {
+  @include phone {
     flex-direction: column;
   }
 }
@@ -14,10 +14,14 @@
   width: 33%;
   padding: 0 cp(15px);
 
-  @include for-phone {
+  @include phone {
     display: flex;
     width: 100%;
     margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -27,8 +31,10 @@
   margin: 0 auto;
   margin-bottom: 33px;
 
-  @include for-phone {
+  @include phone {
     width: 30%;
+    margin-right: 10px;
+    margin-bottom: 0;
   }
 }
 
@@ -39,7 +45,7 @@
 }
 
 .best__subscribe {
-  @include for-phone {
+  @include phone {
     width: 70%;
     text-align: left;
   }
@@ -50,11 +56,11 @@
   font-size: em(24px);
   margin-bottom: cp(25px, 310px);
 
-  @include for-tablet {
+  @include tablet {
     font-size: em(21px);
   }
 
-  @include for-phone {
+  @include phone {
     font-size: em(24px);
   }
 }

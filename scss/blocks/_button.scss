@@ -33,7 +33,7 @@
   &--mobile {
     display: none;
     
-    @include for-phone {
+    @include tablet {
       display: block;
     }
   }

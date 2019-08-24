@@ -1,8 +1,9 @@
 .contacts {
+  position: relative;
   min-height: 100vh;
 }
 
 .contacts__map {
-  flex-grow: 1;
+  padding-bottom: 100vh;
   background: url(../images/map.jpg) no-repeat center / cover;
 }

@@ -5,11 +5,11 @@ body {
   font-size: $font_base_size;
   color: $grey_color;
 
-  @include for-notebook {
+  @include notebook {
     font-size: ($font_base_size - 1px);
   }
 
-  @include for-tablet {
+  @include tablet {
     font-size: $font_base_size;
   }
 }
@@ -34,6 +34,10 @@ body {
   &--white {
     color: #fff;
   }
+
+  @include phone {
+    font-size: em(62px);
+  }
 }
 
 .section-subtitle {
@@ -41,8 +45,8 @@ body {
   font-size: em(65px);
   color: #fff;
 
-  @include for-phone {
-    font-size: em(48px);
+  @include phone {
+    font-size: em(42px);
   }
 }
 

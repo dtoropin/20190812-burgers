@@ -3,9 +3,15 @@
   justify-content: space-between;
   color: #fff;
 
-  @include for-tablet {
+  @include tablet {
     flex-direction: column;
-    align-items: center;
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+
+  @include phone {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -13,12 +19,12 @@
   width: 50%;
   margin-left: 20px;
 
-  @include for-tablet {
+  @include tablet {
     margin-left: 0;
-    width: 60%;
+    width: 100%;
   }
 
-  @include for-phone {
+  @include phone {
     width: 100%;
   }
 
@@ -29,25 +35,31 @@
 
 .delivery-form__row {
   display: flex;
+  margin-bottom: 20px;
+
+  @include phone {
+    margin-bottom: 15px;
+  }
 
   & > .button--empty {
     margin-left: 10px;
   }
 
-  &--radio {
-    margin-bottom: 10px;
+  &--textarea {
+    margin-bottom: 35px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
   }
 
   &--mobile {
-    @include for-phone {
-      justify-content: center;
+    @include tablet {
+      margin-bottom: 20px;
     }
 
-    &:last-child {
-      @include for-tablet {
-        margin-bottom: 20px;
-        margin-top: 20px;
-      }
+    @include phone {
+      justify-content: center;
     }
   }
 }
@@ -55,7 +67,10 @@
 .delivery-form__item {
   flex-grow: 1;
   margin-left: 20px;
-  margin-bottom: 20px;
+
+  @include tablet {
+    margin-left: 15px;
+  }
 
   &:first-child {
     margin-left: 0;
@@ -66,8 +81,9 @@
     align-items: center;
     flex-grow: 0;
   }
-  &--mobile {
-    @include for-phone {
+
+  &--hidden-on-mobile {
+    @include phone {
       display: none;
     }
   }
@@ -86,14 +102,14 @@
   background-color: #fff;
   outline: none;
   border: solid 2px transparent;
-  transition: .3s all ease;
-  
+  transition: 0.3s all ease;
+
   &:focus {
     border: solid 2px $yellow_color;
   }
 
-  &[name="comment"] {
-    height: 122px;
+  &--textarea {
+    height: 121px;
     resize: none;
   }
 }
@@ -128,7 +144,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: .3s opacity ease;
+    transition: 0.3s opacity ease;
   }
 }
 
@@ -136,7 +152,7 @@
   border-radius: 50%;
 
   &::after {
-    content: '';
+    content: "";
     width: 8px;
     height: 8px;
     border-radius: 50%;
@@ -145,7 +161,7 @@
 }
 
 .delivery-form__check::after {
-  content: '\2714';
+  content: "\2714";
   color: $accent_color;
   font-weight: 700;
   font-size: em(16px);

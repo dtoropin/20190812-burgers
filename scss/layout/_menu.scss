@@ -6,24 +6,23 @@
 }
 
 .menu__title {
-  width: 35vw;
-  padding-top: 100px;
-  padding-right: 50px;
-  text-align: right;
+  position: absolute;
+  top: 110px;
+  left: cp(93px, 1100px);
 
-  @include for-tablet {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 35%;
+  @include phone {
+    left: 4%;
   }
 }
 
 .menu__content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
   width: 65vw;
 
-  @include for-tablet {
+  @include tablet {
     width: 100%;
   }
 }

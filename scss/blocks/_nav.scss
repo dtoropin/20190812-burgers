@@ -5,7 +5,7 @@
   margin-right: 14px;
   color: #fff;
 
-  @include for-notebook {
+  @include notebook {
     order: 1;
     margin-left: 14px;
     margin-right: 0;
@@ -13,9 +13,9 @@
 }
 
 .nav__list {
-  @include for-notebook {
+  @include notebook {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     min-height: 100vh;
     right: 0;
@@ -24,8 +24,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: -1;
-    // для .header__button z-index: -2;
+    z-index: $z-menu-mobile;
   }
 }
 
@@ -36,7 +35,7 @@
     content: '\25cf';
     margin-right: 8px;
 
-    @include for-notebook {
+    @include notebook {
       margin-bottom: 20px;
     }
   }
@@ -49,7 +48,7 @@
     }
   }
 
-  @include for-notebook {
+  @include notebook {
     font-size: em(21px);
     display: flex;
     flex-direction: column;

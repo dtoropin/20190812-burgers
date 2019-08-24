@@ -3,45 +3,85 @@
   justify-content: flex-end;
   color: #fff;
   height: 100%;
+
+  @include phone {
+    position: relative;
+  }
 }
 
 .accordion-menu__item {
   position: relative;
   display: flex;
 
+  @include phone {
+    position: static;
+  }
+
   &.active {
     & > .accordion-menu__title {
-      display: flex;
+      width: 80px;
       color: $yellow_color;
 
+      @include tablet {
+        width: 65px;
+      }
+
+      @include phone {
+        width: 50px;
+      }
+
       &:hover {
-        color: rgba($yellow_color, .7);
+        color: rgba($yellow_color, 0.7);
       }
     }
     & > .accordion-menu__text {
-      display: block;
+      width: 100%;
+      padding: cp(60px, 760px) cp(35px, 760px);
+      z-index: $z-accordion-menu-text;
+
+      @include phone {
+        padding-top: 40px;
+      }
     }
     & > .accordion-menu__link {
       position: absolute;
       top: 0;
       bottom: 0;
       right: 0;
+
+      @include phone {
+        &--meat {
+          right: 100px;
+        }
+        &--vegan {
+          right: 50px;
+        }
+        &--diet {
+          right: 0;
+        }
+      }
     }
   }
 }
 
 .accordion-menu__title,
 .accordion-menu__link {
-  width: 82px;
+  width: 80px;
   flex-shrink: 0;
   display: flex;
-  align-items: flex-end;
   justify-content: center;
-  cursor: pointer;
-  transition: .3s color ease;
+  transition: 0.3s color ease;
 
   &:hover {
-    color: rgba(#fff, .7);
+    color: rgba(#fff, 0.7);
+  }
+
+  @include tablet {
+    width: 65px;
+  }
+
+  @include phone {
+    width: 50px;
   }
 }
 
@@ -53,7 +93,16 @@
 }
 
 .accordion-menu__title {
-  display: none;
+  width: 0;
+  overflow: hidden;
+
+  @include tablet {
+    width: 0;
+  }
+
+  @include phone {
+    width: 0;
+  }
 }
 
 .accordion-menu__head {
@@ -62,12 +111,75 @@
   writing-mode: vertical-lr;
   padding-top: 40px;
   transform: rotate(180deg);
+
+  @include tablet {
+    font-size: em(34px);
+  }
+
+  @include phone {
+    font-size: em(28px);
+  }
 }
 
 .accordion-menu__text {
-  display: none;
-  background: rgba(#363534, .92);
+  width: 0;
+  height: 100%;
+  background: rgba(#363534, 0.92);
   line-height: em(28px);
-  padding: cp(60px, 760px) cp(35px, 760px);
-  z-index: $z-accordion-menu-text;
+  overflow: hidden;
+
+  @include tablet {
+    line-height: em(24px);
+  }
+}
+
+.accordion-menu__link {
+  @include phone {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    &--meat {
+      right: 100px;
+    }
+    &--vegan {
+      right: 50px;
+    }
+    &--diet {
+      right: 0;
+    }
+  }
+}
+
+.accordion-menu__close {
+  display: none;
+
+  @include phone {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 50;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 3px;
+      width: 20px;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    &::after {
+      top: 8px;
+      transform: rotate(45deg);
+    }
+    &::before {
+      top: 8px;
+      transform: rotate(-45deg);
+    }
+  }
 }

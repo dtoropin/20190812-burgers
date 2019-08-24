@@ -4,7 +4,7 @@
   right: 50px;
   z-index: $z-navpage;
 
-  @include for-notebook {
+  @include notebook {
     display: none;
   }
 }

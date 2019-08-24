@@ -15,14 +15,10 @@
   flex-direction: column;
   justify-content: center;
 
-  @include for-tablet {
-    width: 70%;
+  @include tablet {
+    width: 100%;
     left: 0;
     padding-left: 10px;
     text-align: center;
-  }
-
-  @include for-phone {
-    width: 100%;
   }
 }

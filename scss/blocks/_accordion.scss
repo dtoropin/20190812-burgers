@@ -6,6 +6,10 @@
   margin-bottom: 35px;
   transition: .3s all ease;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   &.active {
     & > .accordion__head {
       color: $yellow_color;
@@ -17,7 +21,7 @@
 
     & > .accordion__card {
       height: 100%;
-      padding: 18px;
+      padding: 18px 18px 0;
     }
   }
 }
@@ -26,10 +30,9 @@
   font-family: $font_title;
   display: inline-flex;
   align-items: center;
-  cursor: pointer;
   transition: .3s all ease;
 
-  @include for-tablet {
+  @include tablet {
     font-size: em(24px);
   }
 
@@ -57,7 +60,7 @@
   align-items: flex-start;
   transition: .3s all ease;
 
-  @include for-tablet {
+  @include tablet {
     text-align: center;
     align-items: center;
     flex-direction: column;
@@ -72,7 +75,7 @@
   overflow: hidden;
   background: no-repeat center / cover;
 
-  @include for-tablet {
+  @include tablet {
     margin-right: 0;
     margin-bottom: 22px;
   }

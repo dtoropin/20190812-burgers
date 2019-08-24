@@ -1,14 +1,15 @@
 .first {
-  min-height: 100vh;
+  // min-height: 100vh;
   background: url(../images/first-bg.jpg) no-repeat center / cover;
-  padding-top: 13px;
+  // padding-top: 13px;
 }
 
 .first__content {
   flex-grow: 1;
   align-items: center;
+  justify-content: center;
 
-  @include for-tablet {
+  @include tablet {
     flex-direction: column;
   }
 }
@@ -21,11 +22,11 @@
 .first__img {
   width: 45%;
 
-  @include for-tablet {
+  @include tablet {
     width: 60%;
   }
 
-  @include for-phone {
+  @include phone {
     width: 80%;
   }
 }
@@ -34,14 +35,15 @@
   width: 55%;
   padding-top: 50px;
 
-  @include for-tablet {
+  @include tablet {
     text-align: center;
     width: 90%;
+    padding-top: 0;
   }
 }
 
 .first__down {
-  margin: 38px auto;
+  margin: 0 auto 10px;
   width: 29px;
   transition: .3s all ease;
 
