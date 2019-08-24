@@ -11,6 +11,10 @@
   @include notebook {
     display: block;
   }
+
+  &.active ~ .nav__list {
+    display: flex;
+  }
 }
 
 .hamburger__elem {
