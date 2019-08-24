@@ -579,7 +579,7 @@ body {
   width: 24px;
   height: 24px;
   cursor: pointer;
-  z-index: 30;
+  z-index: 40;
 }
 
 .hamburger__elem {
@@ -835,7 +835,7 @@ body {
 .accordion-menu__item.active > .accordion-menu__text {
   width: 100%;
   padding: 7.89474% 4.60526%;
-  z-index: 40;
+  z-index: 20;
 }
 
 .accordion-menu__item.active > .accordion-menu__link {
@@ -1285,7 +1285,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 20;
+    z-index: 30;
   }
 
   .nav__item::before {
@@ -1536,7 +1536,7 @@ body {
     position: absolute;
     top: 15px;
     right: 20px;
-    z-index: 50;
+    z-index: 25;
   }
 
   .accordion-menu__close::after,

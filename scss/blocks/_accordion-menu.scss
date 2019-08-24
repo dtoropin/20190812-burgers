@@ -163,7 +163,7 @@
     position: absolute;
     top: 15px;
     right: 20px;
-    z-index: 50;
+    z-index: $z-accordion-menu-close;
 
     &::after,
     &::before {
