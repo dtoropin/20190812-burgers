@@ -845,6 +845,10 @@ body {
   right: 0;
 }
 
+.accordion-menu__item.active > .accordion-menu__close {
+  display: block;
+}
+
 .accordion-menu__title,
 .accordion-menu__link {
   width: 80px;
@@ -1527,7 +1531,6 @@ body {
   }
 
   .accordion-menu__close {
-    display: block;
     width: 20px;
     height: 20px;
     position: absolute;
