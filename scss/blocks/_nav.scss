@@ -38,6 +38,7 @@
 
     @include notebook {
       margin-bottom: 20px;
+      margin-right: 0;
     }
 
     @include phone {
@@ -59,6 +60,11 @@
     flex-direction: column;
     text-align: center;
     margin-bottom: 20px;
+    margin-left: 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
