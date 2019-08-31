@@ -161,8 +161,14 @@
 }
 
 .delivery-form__check::after {
-  content: "\2714";
-  color: $accent_color;
-  font-weight: 700;
-  font-size: em(16px);
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  width: 9px;
+  height: 4px;
+  border-width: 0 0 3px 3px;
+  border-style: solid;
+  border-color: $accent_color;
+  transform: rotate(-49deg);
 }

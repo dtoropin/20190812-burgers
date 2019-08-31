@@ -1,0 +1,14 @@
+.price {
+  font-family: $font_title;
+  color: #e35028;
+  margin-right: 29px;
+}
+
+.price__number {
+  font-size: em(72px);
+  line-height: 0.93;
+}
+
+.price__currency {
+  font-size: em(30px);
+}

@@ -14,17 +14,18 @@
 
 .nav__list {
   @include notebook {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     min-height: 100vh;
     right: 0;
-    left: 0;
+    left: 100%;
     background: rgba($grey_color, .92);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: $z-menu-mobile;
+    transition: .3s left ease;
   }
 }
 
@@ -37,6 +38,10 @@
 
     @include notebook {
       margin-bottom: 20px;
+    }
+
+    @include phone {
+      font-size: 1em;
     }
   }
 

@@ -23,6 +23,10 @@ var path = {
     src: 'scss/*.scss',
     dest: 'css/',
     watch: 'scss/**/*.scss'
+  },
+  js: {
+    src: 'js/*.js',
+    watch: 'js/*.js'
   }
 };
 
@@ -46,6 +50,12 @@ function html() {
     .pipe(reload({ stream: true }));
 }
 
+// js
+function js() {
+  return gulp.src(path.js.src)
+    .pipe(reload({ stream: true }));
+}
+
 // style
 function style() {
   return gulp.src(path.style.src)
@@ -60,6 +70,7 @@ function style() {
 function devwatch() {
   watch(path.html.watch, html);
   watch(path.style.watch, style);
+  watch(path.js.watch, js);
 }
 
 // clean

@@ -4,24 +4,22 @@
 
 .accordion__item {
   margin-bottom: 35px;
-  transition: .3s all ease;
 
   &:last-child {
     margin-bottom: 0;
   }
 
   &.active {
+    & > .accordion__card {
+      height: 100%;
+    }
+
     & > .accordion__head {
       color: $yellow_color;
 
       &::before {
         transform: rotate(180deg);
       }
-    }
-
-    & > .accordion__card {
-      height: 100%;
-      padding: 18px 18px 0;
     }
   }
 }
@@ -30,14 +28,13 @@
   font-family: $font_title;
   display: inline-flex;
   align-items: center;
-  transition: .3s all ease;
 
   @include tablet {
     font-size: em(24px);
   }
 
   &::before {
-    content: '';
+    content: "";
     display: inline-block;
     width: 0;
     height: 0;
@@ -48,17 +45,16 @@
   }
 
   &:hover {
-    color: rgba(#fff, .6);
+    color: rgba(#fff, 0.6);
   }
 }
 
 .accordion__card {
   height: 0;
-  padding: 0;
+  padding: 18px 18px 0;
   overflow: hidden;
   display: flex;
   align-items: flex-start;
-  transition: .3s all ease;
 
   @include tablet {
     text-align: center;
