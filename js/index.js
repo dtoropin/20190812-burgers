@@ -14,9 +14,9 @@
   const form = document.querySelector('.delivery-form');
   const popupMessage = document.querySelector('#popupMessage');
   const popupMessageClose = document.querySelector('.popup__mes-close');
-  const items = document.querySelectorAll('.slider__item');
   const sliderControl = document.querySelector('.slider__control');
-  let slideIndex = 1;
+  const sliderContent = document.querySelector('.slider__content');
+  let shiftSlide = 0;
 
   let init = function () {
     _setUpListners();
@@ -154,30 +154,18 @@
   }
 
   let _loop = function (direction) {
-    if (direction === 'right') {
-      _showSlides(slideIndex += 1, 'right');
-    } else {
-      _showSlides(slideIndex -= 1, 'left');
+    let activeSlide = document.querySelector('.vision');
+    if (direction === 'right' && activeSlide.previousElementSibling) {
+      shiftSlide += 100;
+      sliderContent.style.transform = `translateX(${shiftSlide}%)`;
+      activeSlide.previousElementSibling.classList.add('vision');
+      activeSlide.classList.remove('vision');
     }
-  }
-
-  let _showSlides = function (n, direction) {
-    let i;
-    if (n > items.length) {
-      slideIndex = 1
-    }
-    if (n < 1) {
-      slideIndex = items.length
-    }
-    for (i = 0; i < items.length; i++) {
-      items[i].style.display = 'none';
-    }
-    items[slideIndex - 1].style.display = 'flex';
-    if (direction == 'right') {
-      items[slideIndex - 1].style.animation = 'showSlidesRight .5s ease forwards';
-    }
-    if (direction == 'left') {
-      items[slideIndex - 1].style.animation = 'showSlidesLeft .5s ease forwards';
+    if (direction === 'left' && activeSlide.nextElementSibling) {
+      shiftSlide -= 100;
+      sliderContent.style.transform = `translateX(${shiftSlide}%)`;
+      activeSlide.nextElementSibling.classList.add('vision');
+      activeSlide.classList.remove('vision');
     }
   }
 
