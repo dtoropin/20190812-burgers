@@ -1,4 +1,5 @@
 .button {
+  display: inline-block;
   color: #fff;
   background-color: $accent_color;
   border-radius: 5px;
@@ -34,7 +35,7 @@
     display: none;
     
     @include tablet {
-      display: block;
+      display: inline-block;
     }
   }
 }

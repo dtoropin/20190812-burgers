@@ -3,92 +3,71 @@
   justify-content: flex-end;
   color: #fff;
   height: 100%;
-
-  @include phone {
-    position: relative;
-  }
 }
 
 .accordion-menu__item {
   position: relative;
-  display: flex;
-
-  @include phone {
-    position: static;
-  }
-
-  &.active {
-    & > .accordion-menu__title {
-      width: 80px;
-      color: $yellow_color;
-
-      @include tablet {
-        width: 65px;
-      }
-
-      @include phone {
-        width: 50px;
-      }
-
-      &:hover {
-        color: rgba($yellow_color, 0.7);
-      }
-    }
-    & > .accordion-menu__text {
-      width: 100%;
-      padding: cp(60px, 760px) cp(35px, 760px);
-      z-index: $z-accordion-menu-text;
-
-      @include phone {
-        padding-top: 40px;
-      }
-    }
-    & > .accordion-menu__link {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-
-      @include phone {
-        &--meat {
-          right: 100px;
-        }
-        &--vegan {
-          right: 50px;
-        }
-        &--diet {
-          right: 0;
-        }
-      }
-    }
-    & > .accordion-menu__close {
-      display: block;
-    }
-  }
-}
-
-.accordion-menu__title,
-.accordion-menu__link {
-  position: relative;
-  width: 80px;
   flex-shrink: 0;
   display: flex;
-  justify-content: center;
-  transition: 0.3s color ease;
-
-  &:hover {
-    color: rgba(#fff, 0.7);
-  }
+  overflow: hidden;
+  width: 80px;
+  transition: .4s ease;
 
   @include tablet {
-    width: 65px;
+    width: 63px;
   }
 
   @include phone {
     width: 50px;
   }
 
-  &::before {
+  &.active {
+    flex-shrink: 1;
+    width: 100%;
+
+    & > .accordion-menu__link {
+      color: $yellow_color;
+
+      &:hover {
+        color: rgba($yellow_color, 0.7);
+      }
+    }
+
+    & > .accordion-menu__title {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+
+      @include phone {
+        right: 100px;
+      }
+    }
+
+    @include phone {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+
+    & > .accordion-menu__close {
+      @include phone {
+        display: block;
+      }
+    }
+  }
+}
+
+.accordion-menu__link,
+.accordion-menu__title {
+  box-sizing: border-box;
+  font-family: $font_title;
+  font-size: em(40px);
+  writing-mode: vertical-lr;
+  padding: 40px 19px 0 19px;
+  transform: rotate(180deg);
+
+  &::after {
     content: "";
     position: absolute;
     top: 0;
@@ -96,71 +75,43 @@
     right: 0;
     left: 0;
     background: rgba(#000, 0.7);
+    z-index: -1;
   }
-}
-
-@each $bg in (meat, vegan, diet) {
-  .accordion-menu__title--#{$bg},
-  .accordion-menu__link--#{$bg} {
-    background: url(../images/accordion-bg-#{$bg}.jpg) no-repeat center / cover;
-  }
-}
-
-.accordion-menu__title {
-  width: 0;
-  overflow: hidden;
-
-  @include tablet {
-    width: 0;
-  }
-
-  @include phone {
-    width: 0;
-  }
-}
-
-.accordion-menu__head {
-  font-family: $font_title;
-  font-size: em(40px);
-  writing-mode: vertical-lr;
-  padding-top: 40px;
-  transform: rotate(180deg);
 
   @include tablet {
     font-size: em(34px);
+    padding: 40px 12px 0 12px;
   }
 
   @include phone {
     font-size: em(28px);
-  }
-}
-
-.accordion-menu__text {
-  width: 0;
-  height: 100%;
-  background: rgba(#363534, 0.92);
-  line-height: em(28px);
-  overflow: hidden;
-
-  @include tablet {
-    line-height: em(24px);
+    padding: 40px 9px 0 9px;
   }
 }
 
 .accordion-menu__link {
-  @include phone {
-    position: absolute;
-    top: 0;
-    bottom: 0;
+  &:hover {
+    color: rgba(#fff, 0.7);
+  }
+}
 
-    &--meat {
-      right: 100px;
-    }
-    &--vegan {
-      right: 50px;
-    }
-    &--diet {
-      right: 0;
+@each $bg in (meat, vegan, diet) {
+  .accordion-menu__link--#{$bg},
+  .accordion-menu__title--#{$bg} {
+    background: url(../images/accordion-bg-#{$bg}.jpg) no-repeat center / cover;
+  }
+}
+
+.accordion-menu__text {
+  background: rgba(#363534, 0.92);
+  z-index: 10;
+
+  & > p {
+    line-height: em(28px);
+    padding: cp(60px, 760px) cp(35px, 760px);
+
+    @include tablet {
+      line-height: em(24px);
     }
   }
 }

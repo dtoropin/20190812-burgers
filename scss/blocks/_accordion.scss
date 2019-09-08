@@ -3,6 +3,7 @@
 }
 
 .accordion__item {
+  overflow: hidden;
   margin-bottom: 35px;
 
   &:last-child {
@@ -11,14 +12,18 @@
 
   &.active {
     & > .accordion__card {
-      height: 100%;
+      height: 118px;
+
+      @include phone {
+        height: 239px;
+      }
     }
 
     & > .accordion__head {
       color: $yellow_color;
 
       &::before {
-        transform: rotate(180deg);
+        transform: rotateX(180deg);
       }
     }
   }
@@ -28,6 +33,7 @@
   font-family: $font_title;
   display: inline-flex;
   align-items: center;
+  margin-bottom: 18px;
 
   @include tablet {
     font-size: em(24px);
@@ -42,6 +48,7 @@
     border-width: 7px 4.5px 0 4.5px;
     border-color: #f9b43b transparent transparent transparent;
     margin-right: 10px;
+    transition: .4s ease;
   }
 
   &:hover {
@@ -51,10 +58,11 @@
 
 .accordion__card {
   height: 0;
-  padding: 18px 18px 0;
+  padding: 0 18px;
   overflow: hidden;
   display: flex;
   align-items: flex-start;
+  transition: .4s ease;
 
   @include tablet {
     text-align: center;
@@ -68,7 +76,6 @@
   min-height: 100px;
   margin-right: 21px;
   border-radius: 50%;
-  overflow: hidden;
   background: no-repeat center / cover;
 
   @include tablet {
