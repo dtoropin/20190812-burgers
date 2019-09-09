@@ -751,7 +751,7 @@ body.noscroll {
 
 .slider__content {
   display: flex;
-  transition: .5s ease;
+  transition: .5s transform ease;
 }
 
 .slider__item {
@@ -774,6 +774,11 @@ body.noscroll {
   margin-bottom: 35px;
   color: #fff;
   line-height: 1.71;
+}
+
+.slider__footer {
+  display: flex;
+  align-items: flex-end;
 }
 
 .composition {
@@ -1397,8 +1402,7 @@ body.noscroll {
 }
 
 .contacts__map {
-  padding-bottom: 100vh;
-  background: url(../images/map.jpg) no-repeat center/cover;
+  min-height: 100vh;
 }
 
 .footer {
@@ -1615,8 +1619,12 @@ body.noscroll {
     text-align: center;
   }
 
+  .accordion__item.active > .accordion__card {
+    height: 218px;
+  }
+
   .accordion__head {
-    font-size: 1.71429em;
+    font-size: 1.5em;
   }
 
   .accordion__card {
@@ -1627,7 +1635,7 @@ body.noscroll {
 
   .accordion__img {
     margin-right: 0;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
   }
 
   .menu__content {
@@ -1757,7 +1765,7 @@ body.noscroll {
   }
 
   .composition__list {
-    width: 200px;
+    width: 190px;
     padding: 10px 12px;
   }
 

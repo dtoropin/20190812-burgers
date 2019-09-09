@@ -4,6 +4,6 @@
 }
 
 .contacts__map {
-  padding-bottom: 100vh;
-  background: url(../images/map.jpg) no-repeat center / cover;
+  min-height: 100vh;
+  // background: url(../images/map.jpg) no-repeat center / cover;
 }

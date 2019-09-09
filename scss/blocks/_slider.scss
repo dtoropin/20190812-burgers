@@ -38,7 +38,7 @@
 
 .slider__content {
   display: flex;
-  transition: .5s ease;
+  transition: .5s transform ease;
 }
 
 .slider__item {
@@ -99,4 +99,9 @@
     margin-left: -30px;
     margin-right: -30px;
   }
+}
+
+.slider__footer {
+  display: flex;
+  align-items: flex-end;
 }

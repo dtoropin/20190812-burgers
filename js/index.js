@@ -5,9 +5,8 @@
   const body = document.querySelector('body');
   const team = document.querySelector('.accordion');
   const teamItem = document.querySelectorAll('.accordion__item');
-  const menuLink = document.querySelectorAll('.accordion-menu__link');
+  const menu = document.querySelector('.accordion-menu');
   const menuItem = document.querySelectorAll('.accordion-menu__item');
-  const menuClose = document.querySelectorAll('.accordion-menu__close');
   const reviewList = document.querySelector('.reviews__list');
   const popupReviews = document.querySelector('#popupReviews');
   const popupClose = document.querySelector('.popup__close');
@@ -17,9 +16,33 @@
   const sliderControl = document.querySelector('.slider__control');
   const sliderContent = document.querySelector('.slider__content');
   let shiftSlide = 0;
+  const placeMarks = [
+    {
+      latitude: 59.973495,
+      longitude: 30.310718,
+      hintContent: 'улица Чапыгина, 11'
+    },
+    {
+      latitude: 59.945932,
+      longitude: 30.380769,
+      hintContent: 'Калужский переулок, 7'
+    },
+    {
+      latitude: 59.887203,
+      longitude: 30.313387,
+      hintContent: 'Заставская улица, 46к2'
+    },
+    {
+      latitude: 59.915270,
+      longitude: 30.493510,
+      hintContent: 'улица Подвойского, 33к2'
+    }
+  ];
 
+  // Инициализация js
   let init = function () {
     _setUpListners();
+    ymaps.ready(_mapInit);
   };
 
   // Прослушка событий
@@ -42,18 +65,14 @@
       }
     });
 
-    menuLink.forEach(function (elem) {
-      elem.addEventListener('click', function (e) {
-        e.preventDefault();
+    menu.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (e.target.classList.contains('accordion-menu__link')) {
         _showMenu(e);
-      });
-    });
-
-    menuClose.forEach(function (elem) {
-      elem.addEventListener('click', function (e) {
-        e.preventDefault();
+      }
+      if (e.target.classList.contains('accordion-menu__close')) {
         _closeBtn(e.target.parentElement);
-      });
+      }
     });
 
     reviewList.addEventListener('click', function (e) {
@@ -61,7 +80,7 @@
         e.preventDefault();
         let title = e.target.parentElement.firstElementChild;
         let text = title.nextElementSibling;
-        _showReview(title.innerHTML, text.innerHTML);
+        _showPopupReview(title.innerHTML, text.innerHTML);
       }
     });
 
@@ -73,6 +92,7 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       let url = 'https://webdev-api.loftschool.com/sendmail';
+      // let url = 'https://webdev-api.loftschool.com/sendmail/fail';
       let data = new FormData();
 
       data.append('name', e.target.elements.name.value);
@@ -83,14 +103,14 @@
       let xhr = new XMLHttpRequest();
 
       xhr.open('POST', url);
-      xhr.responseType = 'json'; // ???
+      xhr.responseType = 'json';
       xhr.send(data);
       xhr.addEventListener('load', () => {
         if (xhr.status >= 400) {
           // console.error(xhr.status);
-          _messageSend('Что-то пошло не так...');
+          _showPopupMessageSend('Что-то пошло не так...');
         } else {
-          _messageSend(xhr.response.message);
+          _showPopupMessageSend(xhr.response.message);
           // console.log(xhr);
         }
       });
@@ -106,7 +126,8 @@
       e.preventDefault();
       if (e.target.classList.contains('slider__arrow--left')) {
         _loop('right');
-      } else if (e.target.classList.contains('slider__arrow--right')) {
+      }
+      if (e.target.classList.contains('slider__arrow--right')) {
         _loop('left');
       }
     });
@@ -139,7 +160,7 @@
     target.classList.remove('active');
   }
 
-  let _showReview = function ($title, $text) {
+  let _showPopupReview = function ($title, $text) {
     popupReviews.classList.add('active');
     let title = document.querySelector('.popup__title');
     title.innerHTML = $title;
@@ -147,7 +168,7 @@
     text.innerHTML = $text;
   }
 
-  let _messageSend = function (message) {
+  let _showPopupMessageSend = function (message) {
     popupMessage.classList.add('active');
     let popupMess = document.querySelector('.popup__mes-text');
     popupMess.innerHTML = message;
@@ -167,6 +188,38 @@
       activeSlide.nextElementSibling.classList.add('vision');
       activeSlide.classList.remove('vision');
     }
+  }
+
+  let _mapInit = function () {
+    let geoObject = [];
+    let map = new ymaps.Map('map', {
+      center: [59.923055, 30.385391],
+      zoom: 11,
+      controls: ['zoomControl'],
+      behaviors: ['drag']
+    });
+
+    for (let i = 0; i < placeMarks.length; i++) {
+      geoObject[i] = new ymaps.Placemark(
+        [placeMarks[i].latitude, placeMarks[i].longitude],
+        { hintContent: placeMarks[i].hintContent },
+        {
+          iconLayout: 'default#image',
+          iconImageHref: 'images/sprite.svg#map-marker',
+          iconImageSize: [46, 46],
+          iconImageOffset: [-23, -46]
+        }
+      );
+    }
+    let clusters = new ymaps.Clusterer({zoomMargin: 40});
+    map.geoObjects.add(clusters);
+    clusters.add(geoObject);
+
+    // Клик на placemark
+    map.geoObjects.events.add('click', function (e) {
+      var coords = e.get('target').geometry.getCoordinates();
+      map.setCenter(coords, 17);
+    });
   }
 
   return init();
