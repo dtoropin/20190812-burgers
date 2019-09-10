@@ -745,7 +745,7 @@ body.noscroll {
 }
 
 .slider__wrapper {
-  margin: 20px 30px;
+  margin: 0 30px;
   overflow: hidden;
 }
 

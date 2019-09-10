@@ -211,7 +211,7 @@
         }
       );
     }
-    let clusters = new ymaps.Clusterer({zoomMargin: 40});
+    let clusters = new ymaps.Clusterer({ zoomMargin: 45 });
     map.geoObjects.add(clusters);
     clusters.add(geoObject);
 
