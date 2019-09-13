@@ -1810,6 +1810,10 @@ body {
   .working__content {
     width: 80%;
   }
+
+  .video__control {
+    padding: 5px 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1976,6 +1980,10 @@ body {
 
   .working__content {
     width: 96%;
+  }
+
+  .video__control {
+    padding: 5px;
   }
 
   .footer {

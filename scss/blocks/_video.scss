@@ -44,6 +44,14 @@
   background: #3e3e3e;
   padding: 5px 20px;
   margin-top: -4px;
+
+  @include tablet {
+    padding: 5px 10px;
+  }
+
+  @include phone {
+    padding: 5px;
+  }
 }
 
 .video__duration {
