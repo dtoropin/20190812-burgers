@@ -17,11 +17,11 @@
 
 @import "layout/best";
 
-@import 'layout/burgers';
-@import 'blocks/slider';
-@import 'blocks/composition';
-@import 'blocks/energy';
-@import 'blocks/price';
+@import "layout/burgers";
+@import "blocks/slider";
+@import "blocks/composition";
+@import "blocks/energy";
+@import "blocks/price";
 
 @import "layout/team";
 @import "blocks/accordion";
@@ -34,6 +34,9 @@
 
 @import "layout/delivery";
 @import "forms/delivery-form";
+
+@import "layout/working";
+@import "blocks/video";
 
 @import "layout/contacts";
 @import "blocks/footer";

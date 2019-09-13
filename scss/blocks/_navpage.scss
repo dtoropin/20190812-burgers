@@ -16,7 +16,7 @@
     margin-bottom: 0;
   }
 
-  &.active > .navpage__dot {
+  &.is-active > .navpage__dot {
     pointer-events: none;
   }
 }
@@ -44,6 +44,6 @@
 }
 
 .navpage__dot:hover,
-.navpage__item.active > .navpage__dot {
+.navpage__item.is-active > .navpage__dot {
   border: 1px solid #fff;
 }

@@ -55,6 +55,7 @@
     justify-content: center;
     text-align: center;
     padding-top: cp(180px);
+    padding-bottom: cp(15px);
   }
 
   @include phone {
@@ -96,12 +97,13 @@
   @include tablet {
     padding-top: 0;
     margin-bottom: 20px;
-    margin-left: -30px;
-    margin-right: -30px;
+    // margin-left: -30px;
+    // margin-right: -30px;
   }
 }
 
 .slider__footer {
   display: flex;
   align-items: flex-end;
+  padding-left: 5px;
 }

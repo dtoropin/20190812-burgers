@@ -2,7 +2,6 @@
 
   const hamburger = document.querySelector('.hamburger');
   const navList = document.querySelector('.nav__list');
-  const body = document.querySelector('body');
   const team = document.querySelector('.accordion');
   const teamItem = document.querySelectorAll('.accordion__item');
   const menu = document.querySelector('.accordion-menu');
@@ -136,7 +135,6 @@
   // Вспомогательные функции
   let _toggleMenu = function () {
     hamburger.classList.toggle('active');
-    body.classList.toggle('noscroll');
   }
 
   let _showTeam = function (e) {
@@ -211,7 +209,7 @@
         }
       );
     }
-    let clusters = new ymaps.Clusterer({ zoomMargin: 45 });
+    let clusters = new ymaps.Clusterer({ zoomMargin: 50 });
     map.geoObjects.add(clusters);
     clusters.add(geoObject);
 
