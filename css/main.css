@@ -1432,6 +1432,8 @@ body {
 
 .video__play {
   opacity: 1;
+  width: 13%;
+  height: 34%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1811,6 +1813,11 @@ body {
     width: 80%;
   }
 
+  .video__play {
+    width: 10%;
+    height: 29%;
+  }
+
   .video__control {
     padding: 5px 10px;
   }
@@ -1980,6 +1987,11 @@ body {
 
   .working__content {
     width: 96%;
+  }
+
+  .video__play {
+    width: 7%;
+    height: 20%;
   }
 
   .video__control {
