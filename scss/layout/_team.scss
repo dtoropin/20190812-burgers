@@ -9,13 +9,9 @@
   width: 50%;
   flex-shrink: 0;
   background: rgba(#2f3234, .92);
-  // padding-left: cp(97px, 1440px);
-  // padding-right: 10px;
-  // padding-top: cp(115px, 1440px);
-  padding: cp(115px, 1440px) 10px 0 cp(97px, 1440px);
+  padding: 5% 10px 0 cp(97px, 1440px);
   display: flex;
   flex-direction: column;
-  // justify-content: center;
 
   @include tablet {
     width: 100%;

@@ -1,22 +1,15 @@
 //! onePageScroll
-const onePageScroll = (function () {
-	const wrapper = document.querySelector('.wrapper');
+(function () {
 	const pages = document.querySelectorAll('.section');
 	const content = document.querySelector('.main-content');
 	const points = document.querySelectorAll('.navpage__item');
 	const dataScrollTo = document.querySelectorAll('[data-scroll-to]');
+	const hamburger = document.querySelector('.hamburger');
+	const popups = document.querySelectorAll('.popup');
 	let inScroll = false;
 
-	const init = function (mobile) {
-		if (mobile) {
-			_unSetUpListners();
-			wrapper.style.overflow = 'inherit';
-			content.style = '';
-			return false;
-		} else {
-			_setUpListners();
-			wrapper.style.overflow = 'hidden';
-		}
+	const init = function () {
+		_setUpListners();
 	};
 
 	const _setUpListners = function () {
@@ -27,15 +20,8 @@ const onePageScroll = (function () {
 		});
 	};
 
-	const _unSetUpListners = function () {
-		document.removeEventListener('wheel', _wheel);
-		document.removeEventListener('keydown', _keyPush);
-		dataScrollTo.forEach(function (elem) {
-			elem.removeEventListener('click', _scrollTo);
-		});
-	};
-
 	let _wheel = function (e) {
+		if (_overlayActive()) return false;
 		let direct = e.deltaY > 0 ? 'up' : 'down';
 		_scrollToPage(direct);
 	}
@@ -51,6 +37,15 @@ const onePageScroll = (function () {
 			default:
 				break;
 		}
+	}
+
+	let _overlayActive = function () {
+		let isActive = false;
+		if (hamburger.classList.contains('active')) isActive = true;
+		popups.forEach(function (el) {
+			if (el.classList.contains('active')) isActive = true;
+		});
+		return isActive;
 	}
 
 	let _scrollTo = function (e) {
@@ -108,14 +103,5 @@ const onePageScroll = (function () {
 	}
 
 
-	return {
-		init: init
-	}
+	return init();
 })();
-
-window.innerWidth > 992 ? onePageScroll.init(false) : onePageScroll.init(true);
-
-window.addEventListener('resize', function () {
-	location.href = '';
-	window.innerWidth > 992 ? onePageScroll.init(false) : onePageScroll.init(true);
-});

@@ -6,26 +6,7 @@
   color: #fff;
 
   @include notebook {
-    order: 1;
-    margin-left: 14px;
-    margin-right: 0;
-  }
-}
-
-.nav__list {
-  @include notebook {
-    display: flex;
-    position: fixed;
-    top: 0;
-    min-height: 100vh;
-    right: 0;
-    left: 100%;
-    background: rgba($grey_color, .92);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: $z-menu-mobile;
-    transition: .3s left ease;
+    display: none;
   }
 }
 
@@ -35,15 +16,6 @@
   &::before {
     content: '\25cf';
     margin-right: 8px;
-
-    @include notebook {
-      margin-bottom: 20px;
-      margin-right: 0;
-    }
-
-    @include phone {
-      font-size: 1em;
-    }
   }
 
   &:first-child {
@@ -51,19 +23,6 @@
 
     &::before {
       display: none;
-    }
-  }
-
-  @include notebook {
-    font-size: em(21px);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 20px;
-    margin-left: 0;
-
-    &:last-child {
-      margin-bottom: 0;
     }
   }
 }

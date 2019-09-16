@@ -1,7 +1,9 @@
-(function () {
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 
+(function () {
   const hamburger = document.querySelector('.hamburger');
-  const navList = document.querySelector('.nav__list');
+  const navList = document.querySelector('.nav-mobile__list');
   const team = document.querySelector('.accordion');
   const teamItem = document.querySelectorAll('.accordion__item');
   const menu = document.querySelector('.accordion-menu');
@@ -52,7 +54,7 @@
     });
 
     navList.addEventListener('click', function (e) {
-      if (e.target.className == 'nav__link' && window.innerWidth <= 992) {
+      if (e.target.className == 'nav-mobile__link') {
         _toggleMenu();
       }
     });

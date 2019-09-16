@@ -70,11 +70,11 @@
 
 .slider__img {
   @include tablet {
-    width: 70%;
+    width: 51%;
   }
 
   @include phone {
-    width: 95%;
+    width: 80%;
   }
 }
 
@@ -96,9 +96,7 @@
 
   @include tablet {
     padding-top: 0;
-    margin-bottom: 20px;
-    // margin-left: -30px;
-    // margin-right: -30px;
+    margin-bottom: 10px;
   }
 }
 

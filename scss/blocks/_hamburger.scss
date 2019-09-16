@@ -2,7 +2,7 @@
   display: none;
   position: fixed;
   top: 5%; // 36px;
-  // right: 15px;
+  right: 10px;
   width: 24px;
   height: 24px;
   cursor: pointer;
@@ -12,7 +12,7 @@
     display: block;
   }
 
-  &.active ~ .nav__list {
+  &.active ~ .nav-mobile__list {
     left: 0;
   }
 }
