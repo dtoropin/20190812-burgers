@@ -15,9 +15,8 @@
   "homepage": "https://dtoropin.github.io/20190812-burgers/",
   "dependencies": {
     "gulp-cli": "^2.2.0",
-    "jquery": "^3.4.1",
-    "normalize.css": "^8.0.1",
-    "zepto": "^1.2.0"
+    "mobile-detect": "^1.4.3",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",

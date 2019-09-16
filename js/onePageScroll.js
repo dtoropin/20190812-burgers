@@ -10,6 +10,7 @@
 
 	const init = function () {
 		_setUpListners();
+		_detectSwipe(_scrollToPage);
 	};
 
 	const _setUpListners = function () {
@@ -19,6 +20,41 @@
 			elem.addEventListener('click', _scrollTo);
 		});
 	};
+
+	let _detectSwipe = function (func) {
+		swipe_det = new Object();
+		swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
+		var min_x = 30;  //min x swipe for horizontal swipe
+		var max_x = 30;  //max x difference for vertical swipe
+		var min_y = 50;  //min y swipe for vertical swipe
+		var max_y = 60;  //max y difference for horizontal swipe
+		var direc = "";
+		ele = document.querySelector('body');
+		ele.addEventListener('touchstart', function (e) {
+			var t = e.touches[0];
+			swipe_det.sX = t.screenX;
+			swipe_det.sY = t.screenY;
+		}, false);
+		ele.addEventListener('touchmove', function (e) {
+			e.preventDefault();
+			var t = e.touches[0];
+			swipe_det.eX = t.screenX;
+			swipe_det.eY = t.screenY;
+		}, false);
+		ele.addEventListener('touchend', function (e) {
+			//vertical detection
+			if ((((swipe_det.eY - min_y > swipe_det.sY) || (swipe_det.eY + min_y < swipe_det.sY)) && ((swipe_det.eX < swipe_det.sX + max_x) && (swipe_det.sX > swipe_det.eX - max_x) && (swipe_det.eY > 0)))) {
+				if (swipe_det.eY > swipe_det.sY) direc = "down";
+				else direc = "up";
+			}
+
+			if (direc != "" && !_overlayActive()) {
+				if (typeof func == 'function') func(direc);
+			}
+			direc = "";
+			swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
+		}, false);
+	}
 
 	let _wheel = function (e) {
 		if (_overlayActive()) return false;
