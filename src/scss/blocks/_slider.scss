@@ -73,7 +73,7 @@
 
 .slider__img {
   @include tablet {
-    width: 51%;
+    width: 65%;
   }
 
   @include phone {
@@ -91,6 +91,12 @@
   }
 }
 
+.slider__title {
+  font-family: $font_title;
+  color: #fff;
+  font-size: em(42px);
+}
+
 .slider__text {
   padding-top: 24px;
   margin-bottom: 35px;
@@ -106,5 +112,6 @@
 .slider__footer {
   display: flex;
   align-items: flex-end;
+  justify-content: center;
   padding-left: 5px;
 }

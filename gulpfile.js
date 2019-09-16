@@ -75,6 +75,7 @@ function html() {
 // js
 function js() {
   return src(path.js.src)
+    // .pipe(sourcemaps.init())
     .pipe(rigger())
 		.pipe(minify({
 			noSource: true,
@@ -82,6 +83,7 @@ function js() {
 				min: '.min.js'
 			}
     }))
+    // .pipe(sourcemaps.write('.'))
     .pipe(dest(path.js.dest))
     .pipe(reload({ stream: true }));
 }
@@ -89,11 +91,13 @@ function js() {
 // style
 function style() {
   return src(path.style.src)
+    // .pipe(sourcemaps.init())
     .pipe(sass().on('error', notify.onError()))
     .pipe(rename({ suffix: '.min', prefix: '' }))
     .pipe(prefixer())
     .pipe(gcmq())
     .pipe(cssmin())
+    // .pipe(sourcemaps.write('.'))
     .pipe(dest(path.style.dest))
     .pipe(reload({ stream: true }));
 }
@@ -140,7 +144,8 @@ var build = series(clean, parallel(html, fonts, image, style, js, video));
 // default
 task('default', series(build, parallel(webserver, devwatch)));
 
-//svg sprite
+
+//// svg sprite
 var svgSprite = require('gulp-svg-sprite');
 task('svgSprite', function () {
   return src('images/icons/*.svg') //svg files for sprite

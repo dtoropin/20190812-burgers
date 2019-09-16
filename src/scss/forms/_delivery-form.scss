@@ -38,7 +38,7 @@
   margin-bottom: 20px;
 
   @include phone {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
   }
 
   & > .button--empty {
@@ -51,6 +51,10 @@
     @include tablet {
       margin-bottom: 20px;
     }
+
+    @include phone {
+      margin-bottom: 15px;
+    }
   }
 
   &--mobile {
@@ -60,6 +64,7 @@
 
     @include phone {
       justify-content: center;
+      margin-bottom: 15px;
     }
   }
 }
@@ -111,6 +116,14 @@
   &--textarea {
     height: 121px;
     resize: none;
+
+    @include phone {
+      height: 80px;
+    }
+  }
+
+  @include phone {
+    padding: 5px 10px;
   }
 }
 

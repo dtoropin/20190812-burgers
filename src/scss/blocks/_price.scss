@@ -7,8 +7,16 @@
 .price__number {
   font-size: em(72px);
   line-height: 0.93;
+
+  @include phone {
+    font-size: em(56px);
+  }
 }
 
 .price__currency {
   font-size: em(30px);
+
+  @include phone {
+    font-size: em(24px);
+  }
 }

@@ -11,6 +11,10 @@ body {
   @include tablet {
     font-size: $font_base_size;
   }
+
+  @include phone {
+    font-size: ($font_base_size - 2);
+  }
 }
 
 .wrapper {
@@ -45,7 +49,8 @@ body {
   }
 
   @include phone {
-    font-size: em(62px);
+    font-size: em(58px);
+    margin-bottom: cp(32px);
   }
 }
 

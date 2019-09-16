@@ -9,20 +9,21 @@
 }
 
 .reviews__list {
+  height: 100%;
   justify-content: center;
 }
 
 .reviews__item {
   position: relative;
   width: 25%;
-  height: 50vh;
+  height: 50%;
   filter: grayscale(1);
   background: no-repeat center;
   background-size: cover;
 
   @include tablet {
     width: 50%;
-    height: 25vh;
+    height: 25%;
   }
 
   &:hover > .reviews__hover {

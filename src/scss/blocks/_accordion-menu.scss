@@ -18,7 +18,7 @@
   }
 
   @include phone {
-    width: 50px;
+    width: 45px;
   }
 
   &.active {
@@ -112,6 +112,10 @@
 
     @include tablet {
       line-height: em(24px);
+    }
+
+    @include phone {
+      padding-top: cp(170px, 760px);
     }
   }
 }

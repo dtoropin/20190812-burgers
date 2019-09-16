@@ -10,6 +10,10 @@
     margin-bottom: 0;
   }
 
+  @include phone {
+    margin-bottom: 15px;
+  }
+
   &.active {
     & > .accordion__card {
       height: 118px;
@@ -19,7 +23,7 @@
       }
 
       @include phone {
-        height: 239px;
+        height: 200px;
       }
     }
 
@@ -86,6 +90,10 @@
     margin-right: 0;
     margin-bottom: 20px;
   }
+
+  @include phone {
+    margin-bottom: 10px;
+  }
 }
 
 .accordion__subs {
@@ -95,6 +103,10 @@
 .accordion__title {
   font-weight: 700;
   margin-bottom: 20px;
+
+  @include phone {
+    margin-bottom: 10px;
+  }
 }
 
 .accordion__text {
