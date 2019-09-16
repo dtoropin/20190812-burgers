@@ -1,0 +1,79 @@
+body {
+  font-family: $font_base;
+  font-weight: 300;
+  font-size: $font_base_size;
+  color: $grey_color;
+
+  @include notebook {
+    font-size: ($font_base_size - 1px);
+  }
+
+  @include tablet {
+    font-size: $font_base_size;
+  }
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  min-width: 320px;
+  cursor: default;
+}
+
+.main-content {
+  height: 100%;
+  transition: transform .7s;
+}
+
+.section {
+  height: 100%;
+}
+
+.section-title {
+  font-family: $font_title;
+  font-size: em(72px);
+  margin-bottom: cp(52px);
+
+  &--center {
+    text-align: center;
+  }
+  &--yellow {
+    color: $yellow_color;
+  }
+  &--white {
+    color: #fff;
+  }
+
+  @include phone {
+    font-size: em(62px);
+  }
+}
+
+.section-subtitle {
+  font-family: $font_subtitle;
+  font-size: em(65px);
+  color: #fff;
+
+  @include phone {
+    font-size: em(42px);
+  }
+}
+
+.container {
+  max-width: $content_width;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container-verticalflex {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

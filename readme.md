@@ -4,4 +4,6 @@
 
 Наставник: Николай Момотенко
 
-url: https://dtoropin.github.io/20190812-burgers/
+url: https://dtoropin.github.io/20190812-burgers/dist/
+
+Готовый проект в папке dist/

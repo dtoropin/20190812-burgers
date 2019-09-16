@@ -1,0 +1,23 @@
+.working {
+  background: url(images/working-bg.jpg) no-repeat center / cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.working__content {
+  max-width: 660px;
+  width: cp(660px);
+
+  @include tablet {
+    width: 80%;
+  }
+
+  @include phone {
+    width: 96%;
+  }
+}

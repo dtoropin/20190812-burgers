@@ -1,0 +1,149 @@
+.accordion-menu {
+  display: flex;
+  justify-content: flex-end;
+  color: #fff;
+  height: 100%;
+}
+
+.accordion-menu__item {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  overflow: hidden;
+  width: 80px;
+  transition: .4s ease;
+
+  @include tablet {
+    width: 63px;
+  }
+
+  @include phone {
+    width: 50px;
+  }
+
+  &.active {
+    flex-shrink: 1;
+    width: 100%;
+
+    & > .accordion-menu__link {
+      color: $yellow_color;
+
+      &:hover {
+        color: rgba($yellow_color, 0.7);
+      }
+    }
+
+    & > .accordion-menu__title {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+
+      @include phone {
+        right: 100px;
+      }
+    }
+
+    @include phone {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+
+    & > .accordion-menu__close {
+      @include phone {
+        display: block;
+      }
+    }
+  }
+}
+
+.accordion-menu__link,
+.accordion-menu__title {
+  box-sizing: border-box;
+  font-family: $font_title;
+  font-size: em(40px);
+  writing-mode: vertical-lr;
+  padding: 40px 19px 0 19px;
+  transform: rotate(180deg);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(#000, 0.7);
+    z-index: -1;
+  }
+
+  @include tablet {
+    font-size: em(34px);
+    padding: 40px 12px 0 12px;
+  }
+
+  @include phone {
+    font-size: em(28px);
+    padding: 40px 9px 0 9px;
+  }
+}
+
+.accordion-menu__link {
+  &:hover {
+    color: rgba(#fff, 0.7);
+  }
+}
+
+@each $bg in (meat, vegan, diet) {
+  .accordion-menu__link--#{$bg},
+  .accordion-menu__title--#{$bg} {
+    background: url(images/accordion-bg-#{$bg}.jpg) no-repeat center / cover;
+  }
+}
+
+.accordion-menu__text {
+  background: rgba(#363534, 0.92);
+  z-index: 10;
+
+  & > p {
+    line-height: em(28px);
+    padding: cp(60px, 760px) cp(35px, 760px);
+
+    @include tablet {
+      line-height: em(24px);
+    }
+  }
+}
+
+.accordion-menu__close {
+  display: none;
+
+  @include phone {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 8px;
+    right: 17px;
+    z-index: $z-accordion-menu-close;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 3px;
+      width: 20px;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    &::after {
+      top: 8px;
+      transform: rotate(45deg);
+    }
+    &::before {
+      top: 8px;
+      transform: rotate(-45deg);
+    }
+  }
+}

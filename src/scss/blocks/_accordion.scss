@@ -1,0 +1,102 @@
+.accordion {
+  color: #fff;
+}
+
+.accordion__item {
+  overflow: hidden;
+  margin-bottom: 35px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.active {
+    & > .accordion__card {
+      height: 118px;
+
+      @include tablet {
+        height: 218px;
+      }
+
+      @include phone {
+        height: 239px;
+      }
+    }
+
+    & > .accordion__head {
+      color: $yellow_color;
+
+      &::before {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+}
+
+.accordion__head {
+  font-family: $font_title;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 18px;
+
+  @include tablet {
+    font-size: em(21px);
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 4.5px 0 4.5px;
+    border-color: #f9b43b transparent transparent transparent;
+    margin-right: 10px;
+    transition: .4s ease;
+  }
+
+  &:hover {
+    color: rgba(#fff, 0.6);
+  }
+}
+
+.accordion__card {
+  height: 0;
+  padding: 0 18px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  transition: .4s ease;
+
+  @include tablet {
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.accordion__img {
+  min-width: 100px;
+  min-height: 100px;
+  margin-right: 21px;
+  border-radius: 50%;
+  background: no-repeat center / cover;
+
+  @include tablet {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.accordion__subs {
+  max-width: 208px;
+}
+
+.accordion__title {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.accordion__text {
+  line-height: em(21px);
+}

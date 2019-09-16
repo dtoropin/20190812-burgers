@@ -15,7 +15,6 @@
   "homepage": "https://dtoropin.github.io/20190812-burgers/",
   "dependencies": {
     "gulp-cli": "^2.2.0",
-    "mobile-detect": "^1.4.3",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
@@ -23,11 +22,17 @@
     "del": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
+    "gulp-csso": "^3.0.1",
     "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-imagemin": "^6.1.0",
+    "gulp-minify": "^3.1.0",
     "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-rigger": "^0.5.8",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-svg-sprite": "^1.5.0",
-    "gulp-watch": "^5.0.1"
+    "gulp-watch": "^5.0.1",
+    "imagemin-pngquant": "^8.0.0"
   }
 }

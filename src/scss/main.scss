@@ -1,0 +1,46 @@
+@import "core/_variables.scss";
+@import "core/_mixins.scss";
+@import "core/_fonts.scss";
+
+@import "../../node_modules/normalize.css/normalize";
+@import "core/_reset.scss";
+@import "core/_base.scss";
+
+@import "blocks/navpage";
+
+@import "blocks/nav-mobile";
+
+@import "layout/first";
+@import "blocks/header";
+@import "blocks/logo";
+@import "blocks/nav";
+@import "blocks/hamburger";
+@import "blocks/button";
+
+@import "layout/best";
+
+@import "layout/burgers";
+@import "blocks/slider";
+@import "blocks/composition";
+@import "blocks/energy";
+@import "blocks/price";
+
+@import "layout/team";
+@import "blocks/accordion";
+
+@import "layout/menu";
+@import "blocks/accordion-menu";
+
+@import "layout/reviews";
+@import "blocks/popup";
+
+@import "layout/working";
+@import "blocks/video";
+
+@import "layout/delivery";
+@import "forms/delivery-form";
+
+@import "layout/contacts";
+@import "blocks/footer";
+@import "blocks/location";
+@import "blocks/social";

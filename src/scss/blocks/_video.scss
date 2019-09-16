@@ -1,0 +1,99 @@
+.video {
+  width: 100%;
+}
+
+.video__screen {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.video__play {
+  opacity: 1;
+  width: 13%; // 81px
+  height: 34%; // 117px
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: .3s opacity ease;
+
+  &.active {
+    opacity: 0;
+  }
+
+  @include tablet {
+    width: 10%;
+    height: 29%;
+  }
+
+  @include phone {
+    width: 7%;
+    height: 20%;
+  }
+}
+
+#video {
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+.video__control,
+.video__duration,
+.video__sound {
+  display: flex;
+  align-items: center;
+}
+
+.video__control {
+  width: 100%;
+  height: 35px;
+  justify-content: space-between;
+  background: #3e3e3e;
+  padding: 5px 20px;
+  margin-top: -4px;
+
+  @include tablet {
+    padding: 5px 10px;
+  }
+
+  @include phone {
+    padding: 5px;
+  }
+}
+
+.video__duration {
+  width: 73%;
+}
+
+.video__sound {
+  width: 23%;
+}
+
+.video__icon {
+  width: 35px;
+  cursor: pointer;
+}
+
+.video__length {
+  width: 100%;
+  flex-grow: 1;
+  appearance: none;
+  outline: none;
+  height: 4px;
+  border-radius: 1px;
+  background: #626262;
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    background: #626262;
+    cursor: pointer;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+  }
+}

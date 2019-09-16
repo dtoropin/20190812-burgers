@@ -1,0 +1,21 @@
+.team {
+  display: flex;
+  justify-content: flex-end;
+  background: url(images/team-bg.jpg) no-repeat center top / cover;
+}
+
+.team__content {
+  width: 50%;
+  flex-shrink: 0;
+  background: rgba(#2f3234, .92);
+  padding: 5% 10px 0 cp(97px, 1440px);
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    width: 100%;
+    left: 0;
+    padding-left: 10px;
+    text-align: center;
+  }
+}

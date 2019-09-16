@@ -1,0 +1,10 @@
+// fonts
+@include font-face('Ubuntu', 'fonts/Ubuntu-Medium',
+ 500);
+@include font-face('Ubuntu', 'fonts/Ubuntu-Bold',
+bold);
+@include font-face('Ubuntu', 'fonts/Ubuntu-Light',
+300);
+@include font-face('Gagalin', 'fonts/Gagalin-Regular');
+@include font-face('Lifehack', 'fonts/Lifehack-Medium',
+500);

@@ -1,12 +1,18 @@
 'use strict';
 // gulp 4
 
-var gulp = require('gulp'),
+var { src, dest, task, series, parallel } = require('gulp'),
   watch = require('gulp-watch'),
   prefixer = require('gulp-autoprefixer'),
   sass = require('gulp-sass'),
   gcmq = require('gulp-group-css-media-queries'),
   // sourcemaps = require('gulp-sourcemaps'),
+  rigger = require('gulp-rigger'),
+  cssmin = require('gulp-csso'),
+  rename = require('gulp-rename'),
+  minify = require('gulp-minify'),
+  imagemin = require('gulp-imagemin'),
+	pngquant = require('imagemin-pngquant'),
   notify = require('gulp-notify'),
   del = require('del'),
   browserSync = require('browser-sync'),
@@ -16,23 +22,38 @@ sass.compiler = require('node-sass');
 
 var path = {
   html: {
-    src: '*.html',
-    watch: '*.html'
+    src: 'src/*.html',
+    dest: 'dist/',
+    watch: 'src/*.html'
   },
   style: {
-    src: 'scss/*.scss',
-    dest: 'css/',
-    watch: 'scss/**/*.scss'
+    src: 'src/scss/*.scss',
+    dest: 'dist/',
+    watch: 'src/scss/**/*.scss'
   },
   js: {
-    src: 'js/*.js',
-    watch: 'js/*.js'
-  }
+    src: 'src/js/main.js',
+    dest: 'dist/',
+    watch: 'src/js/*.js'
+  },
+  fonts: {
+    src: 'src/fonts/**/*',
+    dest: 'dist/fonts/'
+  },
+  image: {
+    src: 'src/images/**/*',
+    dest: 'dist/images'
+  },
+  video: {
+    src: 'src/video/*',
+    dest: 'dist/video/'
+  },
+  clean: 'dist'
 };
 
 var config = {
   server: {
-    baseDir: './'
+    baseDir: './dist/'
   },
   host: 'localhost',
   port: 9000,
@@ -46,24 +67,59 @@ function webserver() {
 
 // html
 function html() {
-  return gulp.src(path.html.src)
+  return src(path.html.src)
+    .pipe(dest(path.html.dest))
     .pipe(reload({ stream: true }));
 }
 
 // js
 function js() {
-  return gulp.src(path.js.src)
+  return src(path.js.src)
+    .pipe(rigger())
+		.pipe(minify({
+			noSource: true,
+			ext: {
+				min: '.min.js'
+			}
+    }))
+    .pipe(dest(path.js.dest))
     .pipe(reload({ stream: true }));
 }
 
 // style
 function style() {
-  return gulp.src(path.style.src)
-    .pipe(sass({ outputStyle: 'compact' }).on('error', notify.onError()))
+  return src(path.style.src)
+    .pipe(sass().on('error', notify.onError()))
+    .pipe(rename({ suffix: '.min', prefix: '' }))
     .pipe(prefixer())
     .pipe(gcmq())
-    .pipe(gulp.dest(path.style.dest))
+    .pipe(cssmin())
+    .pipe(dest(path.style.dest))
     .pipe(reload({ stream: true }));
+}
+
+// fonts
+function fonts() {
+  return src(path.fonts.src)
+    .pipe(dest(path.fonts.dest));
+}
+
+// images
+function image() {
+  return src(path.image.src)
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{ removeViewBox: false }],
+      use: [pngquant()],
+      interlaced: true
+    }))
+    .pipe(dest(path.image.dest))
+}
+
+// video
+function video() {
+  return src(path.video.src)
+    .pipe(dest(path.video.dest));
 }
 
 // watch
@@ -75,19 +131,19 @@ function devwatch() {
 
 // clean
 function clean() {
-  return del(['css']);
+  return del(path.clean);
 }
 
 // build
-var build = gulp.series(clean, gulp.parallel(style));
+var build = series(clean, parallel(html, fonts, image, style, js, video));
 
 // default
-gulp.task('default', gulp.series(build, gulp.parallel(webserver, devwatch)));
+task('default', series(build, parallel(webserver, devwatch)));
 
 //svg sprite
 var svgSprite = require('gulp-svg-sprite');
-gulp.task('svgSprite', function () {
-  return gulp.src('images/icons/*.svg') //svg files for sprite
+task('svgSprite', function () {
+  return src('images/icons/*.svg') //svg files for sprite
     .pipe(svgSprite({
       mode: {
         stack: {
@@ -96,5 +152,5 @@ gulp.task('svgSprite', function () {
       },
     }
     ))
-    .pipe(gulp.dest('images/'));
+    .pipe(dest('images/'));
 });
