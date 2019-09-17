@@ -1,6 +1,3 @@
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
-
 (function () {
   const hamburger = document.querySelector('.hamburger');
   const navList = document.querySelector('.nav-mobile__list');
