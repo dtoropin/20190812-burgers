@@ -40,6 +40,7 @@
   // Инициализация js
   let init = function () {
     _setUpListners();
+    _required();
     ymaps.ready(_mapInit);
   };
 
@@ -132,6 +133,15 @@
   };
 
   // Вспомогательные функции
+  let _required = function () {
+    let input = document.querySelectorAll('.delivery-form__input');
+    input.forEach(function (elem) {
+      if (elem.hasAttribute('required')) {
+        elem.previousElementSibling.classList.add('required');
+      }
+    })
+  }
+
   let _toggleMenu = function () {
     hamburger.classList.toggle('active');
   }

@@ -97,6 +97,11 @@
 .delivery-form__title {
   display: block;
   margin-bottom: 9px;
+
+  &.required::after {
+    content: '*';
+    margin-left: 5px;
+  }
 }
 
 .delivery-form__input {
@@ -131,7 +136,7 @@
   position: absolute;
   z-index: -1;
   opacity: 0;
-  
+
   &:checked + span::after {
     opacity: 1;
   }
@@ -170,7 +175,7 @@
 }
 
 .delivery-form__check::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 3px;
   left: 2px;

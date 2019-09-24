@@ -40,10 +40,12 @@
     height: 6px;
     border-radius: 50%;
     background-color: #fff;
+    box-shadow: 0 0 1px #5e5e5e;
   }
 }
 
 .navpage__dot:hover,
 .navpage__item.is-active > .navpage__dot {
   border: 1px solid #fff;
+  box-shadow: 0 0 1px #5e5e5e;
 }
